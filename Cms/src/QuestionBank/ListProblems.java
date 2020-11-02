@@ -4,7 +4,7 @@ import java.util.*;
 public class ListProblems {
 public final String fname= "Qbs.txt";
 public HashMap<String,Problem> list = new HashMap<>();
-void loadFile() throws IOException {
+public void loadFile() throws IOException {
         list.clear();
         FileReader fr = new FileReader(fname);
         BufferedReader br = new BufferedReader(fr);
@@ -12,8 +12,8 @@ void loadFile() throws IOException {
         String[] a;
         String xId, xDate,xName,xShortDes,xLink,xAuthor;
         double xMark;
-        int xCategory;
-        
+        int xCategory=0;
+        String Cate;
         Problem x= new Problem();
         while (true) {
             s = br.readLine();
@@ -28,14 +28,19 @@ void loadFile() throws IOException {
             xLink=a[4].trim();
             xAuthor=a[5].trim();
             xMark=Double.parseDouble(a[6].trim());
-            xCategory=Integer.parseInt(a[7].trim());
+            Cate=a[7].trim();
+            for(int i=0;i< x.CategoryList.length;i++){
+                if(Cate.compareToIgnoreCase(x.CategoryList[i])==0){
+                    xCategory=i;
+                }
+            }
             x = new Problem(xId, xDate, xName, xShortDes,xAuthor,xLink,xMark,xCategory);
             list.put(xId,x);
         }
         fr.close();
         br.close();
     }
-void saveFile() throws IOException { 
+public void saveFile() throws IOException { 
         FileWriter fw = new FileWriter(fname, false);
         PrintWriter pw = new PrintWriter(fw);
         Problem x;
@@ -46,7 +51,7 @@ void saveFile() throws IOException {
         fw.close();
         pw.close();
     }
-void add() throws IOException{
+public void add() throws IOException{
     Scanner input= new Scanner(System.in);
     String xId, xDate,xName,xShortDes,xLink,xAuthor;
     double xMark;
@@ -63,6 +68,5 @@ void add() throws IOException{
     Problem x= new Problem(xId, xDate, xName, xShortDes,xAuthor,xLink,xMark,xCategory);
     list.put(xId, x);
     saveFile();
-    
 }
 }

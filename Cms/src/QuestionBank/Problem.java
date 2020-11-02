@@ -1,4 +1,4 @@
-package Cms;
+package QuestionBank;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -93,7 +93,7 @@ public Problem() {
     }
 
     public String getCategory() {
-        return CategoryList[Category];
+        return CategoryList[Category-1];
     }
 
     public void setCategory(int Category) {
