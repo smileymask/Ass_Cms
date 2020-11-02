@@ -99,6 +99,11 @@ public Problem() {
     public void setCategory(int Category) {
         this.Category = Category;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%5s|%10s|%15s|%15s|%10s|%10s|%.1f|%s\n", getId(), getDate(), getName(), getShortDes(),getAuthor(),getLink(),getMark(),getCategory());
+    }
     
     
 }

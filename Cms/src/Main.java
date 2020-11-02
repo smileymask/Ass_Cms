@@ -7,9 +7,10 @@ public class Main{
     ListProblems a= new ListProblems();
      try {
          a.loadFile();
-         System.out.println(a.list);
+         a.display();
+         a.add();
+         a.display();
      } catch (IOException ex) {
-         Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
      }
 }
 }

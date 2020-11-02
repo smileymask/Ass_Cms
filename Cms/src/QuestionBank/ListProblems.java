@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*;
 public class ListProblems {
 public final String fname= "Qbs.txt";
-public HashMap<String,Problem> list = new HashMap<>();
+public ArrayList<Problem> list = new ArrayList<>();
 public void loadFile() throws IOException {
         list.clear();
         FileReader fr = new FileReader(fname);
@@ -31,11 +31,11 @@ public void loadFile() throws IOException {
             Cate=a[7].trim();
             for(int i=0;i< x.CategoryList.length;i++){
                 if(Cate.compareToIgnoreCase(x.CategoryList[i])==0){
-                    xCategory=i;
+                    xCategory=i+1;
                 }
             }
             x = new Problem(xId, xDate, xName, xShortDes,xAuthor,xLink,xMark,xCategory);
-            list.put(xId,x);
+            list.add(x);
         }
         fr.close();
         br.close();
@@ -44,19 +44,28 @@ public void saveFile() throws IOException {
         FileWriter fw = new FileWriter(fname, false);
         PrintWriter pw = new PrintWriter(fw);
         Problem x;
-        for (String i: list.keySet()) {
+        for (int i=0;i<list.size();i++) {
             x = list.get(i);
-            pw.printf("%5s | %10s | %10s | %10s |%10s|%10s|%.1f | %s\r\n", x.getId(), x.getDate(), x.getName(), x.getShortDes(),x.getAuthor(),x.getLink(),x.getMark(),x.getCategory());
+            pw.printf("%5s | %10s | %10s | %10s |%10s|%10s|%.1f | %s\n", x.getId(), x.getDate(), x.getName(), x.getShortDes(),x.getAuthor(),x.getLink(),x.getMark(),x.getCategory());
         }
         fw.close();
         pw.close();
     }
-public void add() throws IOException{
+Boolean checkId(String id){
+    for(int i=0;i<list.size();i++){
+        if(id.compareTo(list.get(i).getId())==0){
+            return false;
+        }
+    }
+    return true;
+}
+public void add() throws IOException{ // 3.Add a new problem to the Question Bank (QB) 
     Scanner input= new Scanner(System.in);
     String xId, xDate,xName,xShortDes,xLink,xAuthor;
     double xMark;
     int xCategory;
     System.out.print("Enter problem Id: ");xId=input.nextLine();
+    if(checkId(xId)){
     System.out.print("Enter problem Date: ");xDate=input.nextLine();
     System.out.print("Enter problem Name: ");xName=input.nextLine();
     System.out.print("Enter problem Short Description: ");xShortDes=input.nextLine();
@@ -66,7 +75,21 @@ public void add() throws IOException{
     System.out.println("(1.analysis,2.figure,3.Greedy algorithm,4.Dynamic programming,5.graph");
     System.out.print("Enter problem Category: ");xCategory=Integer.parseInt(input.nextLine());
     Problem x= new Problem(xId, xDate, xName, xShortDes,xAuthor,xLink,xMark,xCategory);
-    list.put(xId, x);
+    list.add(x);
     saveFile();
+    }
+    else{
+        System.out.println("");
+        System.err.println("WARNING:Id problems had exits please enter another Id!");
+        System.out.println("");
+    }
 }
+public void display(){
+    System.out.println("----------------Question Bank----------------------");
+    System.out.printf("%5s|%10s|%15s|%15s|%10s|%10s|%4s|%s\n","ID","Date","Name","Description","Author","Link","Mark","Category");
+    for(int i=0;i<list.size();i++){
+        System.out.print(list.get(i));
+    }
+}
+    
 }
