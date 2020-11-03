@@ -1,5 +1,4 @@
 package QuestionBank;
-
 import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.io.*;
 import java.util.*;
@@ -8,7 +7,10 @@ public class ListProblems {
 
     public final String fname = "Qbs.txt";
     public ArrayList<Problem> list = new ArrayList<>();
-
+    public final Random generator = new Random();
+    int randomNum(int min, int max) {
+        return generator.nextInt((max - min) + 1) + min;
+    }
     public void loadFile() throws IOException {
         list.clear();
         FileReader fr = new FileReader(fname);
@@ -209,5 +211,43 @@ public class ListProblems {
             System.out.print(list.get(i));
         }
     }
+    public ArrayList<Problem> GenerateProblemList(){
+        ArrayList<Problem> a= new ArrayList<>();
+        ArrayList<Problem> anaList= new ArrayList<>();
+        ArrayList<Problem> fiList= new ArrayList<>();
+        ArrayList<Problem> greList= new ArrayList<>();
+        ArrayList<Problem> dyList= new ArrayList<>();
+        ArrayList<Problem> graList= new ArrayList<>();
+        for(Problem i : list){
+            if(i.getCategory().compareToIgnoreCase("analysis")==0){
+                anaList.add(i);
+            }
+            else if(i.getCategory().compareToIgnoreCase("figure")==0){
+                fiList.add(i);
+            }
+            else if(i.getCategory().compareToIgnoreCase("Greedy algorithm")==0){
+                greList.add(i);
+            }
+            else if(i.getCategory().compareToIgnoreCase("Dynamic programming")==0){
+                dyList.add(i);
+            }
+            else if(i.getCategory().compareToIgnoreCase("graph")==0){
+                graList.add(i);
+            }
+            int num =randomNum(0, (anaList.size()-1));
+            a.add(anaList.get(num));
+            num =randomNum(0, (fiList.size()-1));
+            a.add(fiList.get(num));
+            num =randomNum(0, (greList.size()-1));
+            a.add(greList.get(num));
+            num =randomNum(0, (dyList.size()-1));
+            a.add(dyList.get(num));
+            num =randomNum(0, (graList.size()-1));
+            a.add(graList.get(num));
+        }
+        
+        return a;
+    }
+    
 
 }
