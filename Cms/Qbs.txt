@@ -2,4 +2,4 @@
  he15 |         sd |        fsd |        dsf |       fsd|        sd|12.0 | Greedy algorithm
  he32 |   15/08/20 | Phan Duc manh | hello world |     hello|     sfsdf|10.0 | analysis
   he1 |        sd2 |       fsd2 |       dsf2 |      fsd2|       sd2|12.0 | figure
-   h2 |      14/09 |        dsf |        sdf |       sdf|    sdfdsf|15.1 | figure
+   h2 |      15/08 |        dsf |        sdf |       sdf|    sdfdsf|15.1 | figure

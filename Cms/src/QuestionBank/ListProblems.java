@@ -85,16 +85,22 @@ public class ListProblems {
         System.out.println("Enter Id: ");
         xId = input.nextLine();
         if (!checkId(xId)) {
+            int x=FindId(xId);
             while (true) {
+                System.out.println("----------------------------------------------");
                 System.out.printf("Chose data you want to change:\n");
                 System.out.printf("1.Id\n2.Date\n3.Name\n4.Short Description\n5.Link\n6.Author\n7.Mark\n");
                 System.out.printf("8.Category\n0.Exits\n");
                 System.out.print("Your choice: ");
                 choice = Integer.parseInt(input.nextLine());
-                if(choice ==0) break;
+                if(choice == 0) {
+                    saveFile();
+                    break;
+                }
+            
                 switch (choice) {
                     case 1: {
-                        int x=FindId(xId);
+                        
                         String yId= new String();
                         while(true){
                         System.out.print("Enter new Id: ");
@@ -102,7 +108,7 @@ public class ListProblems {
                         if(checkId(yId)|| (yId.compareToIgnoreCase(xId)==0) ){
                             list.get(x).setId(yId);
                             System.out.println("-------------------");
-                            System.out.println("|Update success !|");
+                            System.out.println("  Update success !");
                             System.out.println("-------------------");
                             break;
                         }
@@ -111,12 +117,56 @@ public class ListProblems {
                         saveFile();
                         break;
                     }
+                    case 2:{
+                        System.out.print("Enter new Date: ");xDate=input.nextLine();
+                        list.get(x).setDate(xDate);
+                        System.out.println("-------------------");
+                        System.out.println("  Update success !");
+                        System.out.println("-------------------");
+                        break;
+                    }
+                    case 3:{
+                      System.out.print("Enter new Name: ");xName=input.nextLine();
+                      list.get(x).setName(xName);
+                      System.out.println("-------------------");
+                      System.out.println("  Update success !");
+                      System.out.println("-------------------");
+                      break;
+                        
+                    }
+                    case 4:{
+                       System.out.print("Enter new Short Description: ");xShortDes=input.nextLine();
+                       list.get(x).setShortDes(xShortDes);
+                       System.out.println("-------------------");
+                       System.out.println("  Update success !");
+                       System.out.println("-------------------");
+                       break;
+                    }
+                    case 5:{
+                       System.out.print("Enter new Link: ");xLink=input.nextLine();
+                       list.get(x).setLink(xLink);
+                       System.out.println("-------------------");
+                       System.out.println("  Update success !");
+                       System.out.println("-------------------");
+                       break;
+                    }
+                    case 6:{
+                       System.out.print("Enter new Author: ");xAuthor=input.nextLine();
+                       list.get(x).setAuthor(xAuthor);
+                       System.out.println("-------------------");
+                       System.out.println("  Update success !");
+                       System.out.println("-------------------");
+                       break;
+                    }
+                    
+       
                 }
             }
-        } else {
+            }
+        else {
             System.out.println("Id not Found !");
         }
-       
+         
     }
 
     public void add() throws IOException { // 3.Add a new problem to the Question Bank (QB) 
@@ -153,7 +203,7 @@ public class ListProblems {
     }
 
     public void display() {
-        System.out.println("---------------------------------------Question Bank----------------------");
+        System.out.println("---------------------------------------Question Bank----------------------------------");
         System.out.printf("%5s|%10s|%15s|%15s|%10s|%10s|%4s|%s\n", "ID", "Date", "Name", "Description", "Author", "Link", "Mark", "Category");
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i));
