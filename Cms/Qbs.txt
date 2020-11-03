@@ -1,5 +1,5 @@
- he47 |        sd3 |        fsd |       dsf3 |      fsd3|       s3d|12.0 | figure
+ he78 |        sd3 |        fsd |       dsf3 |      fsd3|       s3d|12.0 | figure
  he15 |         sd |        fsd |        dsf |       fsd|        sd|12.0 | Greedy algorithm
  he32 |   15/08/20 | Phan Duc manh | hello world |     hello|     sfsdf|10.0 | analysis
- he34 |        sd2 |       fsd2 |       dsf2 |      fsd2|       sd2|12.0 | figure
- he12 |      14/09 |        dsf |        sdf |       sdf|    sdfdsf|15.1 | figure
+  he1 |        sd2 |       fsd2 |       dsf2 |      fsd2|       sd2|12.0 | figure
+   h2 |      14/09 |        dsf |        sdf |       sdf|    sdfdsf|15.1 | figure

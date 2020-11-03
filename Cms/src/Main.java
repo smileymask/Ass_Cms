@@ -8,7 +8,7 @@ public class Main{
      try {
          a.loadFile();
          a.display();
-         a.add();
+         a.update();
          a.display();
      } catch (IOException ex) {
      }
