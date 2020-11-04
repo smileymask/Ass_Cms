@@ -1,27 +1,30 @@
-package Cms;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Cms;
 
 /**
  *
  * @author DELL
  */
 public class Contestant {
-    String name; 
+    String name;
     String id;
+    String password;
     String email;
     String mobilephone;
-    int rank;
+    int rank; 
+    
 
     public Contestant() {
     }
 
-    public Contestant(String name, String id, String email, String mobilephone, int rank) {
+    public Contestant(String name, String id, String password, String email, String mobilephone, int rank) {
         this.name = name;
         this.id = id;
+        this.password = password;
         this.email = email;
         this.mobilephone = mobilephone;
         this.rank = rank;
@@ -41,6 +44,14 @@ public class Contestant {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -69,7 +80,9 @@ public class Contestant {
 
     @Override
     public String toString() {
-        return  name + "\t" + id + "\t" + email + "\t" + mobilephone + "\t" + rank;
+        return name + "|" + id + "|" + password + "|" + email + "|" + mobilephone + "|" + rank;
+        
     }
     
+
 }
