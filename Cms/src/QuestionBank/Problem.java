@@ -1,5 +1,7 @@
 package QuestionBank;
 
+import java.io.IOException;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -99,11 +101,21 @@ public Problem() {
     public void setCategory(int Category) {
         this.Category = Category;
     }
-
+    
     @Override
     public String toString() {
         return String.format("%5s|%10s|%15s|%15s|%10s|%10s|%.1f|%s\n", getId(), getDate(), getName(), getShortDes(),getAuthor(),getLink(),getMark(),getCategory());
     }
     
-    
+    public static String GenerateCode() {
+        StringBuilder s = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i < 6; i++) {
+            int num = randomNum(0, ALPHA_NUMERIC.length() - 1);
+            char b = ALPHA_NUMERIC.charAt(num);
+            s.append(b);
+
+        }
+        return s.toString();
+    }
 }
