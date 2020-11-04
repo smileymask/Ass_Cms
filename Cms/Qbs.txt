@@ -1,16 +1,15 @@
-  I56 |  2/11/2020 | Nguyễn Huyền Thành | What is the missing number in the following sequence? 2, 12, 60, 240, 720, 1440, .... 0 |http://w3school.com|Nguyễn Đức Anh|4.0 | figure
-  T82 |  8/21/2020 | Bá Nguyệt Mạnh | The area of a square is ‘d’. What is the area of the circle which has the diagonal of the square as its diameter? |https://www.geeksforgeeks.org|Đào Dương Minh|6.0 | figure
-  L39 |   8/7/2020 | Uchiha Nguyệt Anh | How many edge are there in MCST generated from graph with 'n' vertices |https://www.geeksforgeeks.org|Nguyễn Dương Dương|8.0 | figure
-  X96 |   3/3/2020 | Đào Huyền Nam | Prim’s & Kruskal’s algorithm run on a graph G and produce MCST TP and TK, respectively, and TP is different from TK. Find true statement? |https://www.geeksforgeeks.org|Nguyễn Lê Huyền|5.0 | figure
-  O69 |  5/28/2020 | Nguyễn Dương Tiến | Dijkstra algorithm is also called the …………………. shortest path problem. |Mathematics_for_new.com|Bá Đức Mạnh|9.0 | figure
-  D00 |   8/2/2020 |  Bá Đức Hà | In Greedy method we get ________ Feasible solutions |http://w3school.com|Phan Lê Phúc|3.0 | figure
-  U34 |  6/21/2020 | Bá Huyền Minh | Which of the following is true about Huffman Coding. |http://w3school.com|Phan Nguyệt Giang|10.0 | figure
-  S15 |  4/23/2020 | Đào Mạnh Hiệp | The files x1,x2,x3 are 3 files of length 30,20,10 records each. What is the optimal merge pattern value? |Mathematics_for_new.com|Uchiha Đức Hà|6.0 | figure
-  E53 |  1/18/2020 | Đào Thu Minh | Fractional knapsack is based on ____________method |Mathematics_for_new.com|Uchiha Đức Anh|3.0 | figure
-  S34 | 10/11/2020 | Cao Nguyệt Giang | The output of Kruskal and Prims algorithm is ________________ |http://w3school.com|Uchiha Nguyệt Thành|7.0 | figure
-  X73 |   2/3/2020 | Phạm Nguyệt Đạt | What is a Greedy strategy for Optimal storage on tape |Mathematics_for_new.com|Uchiha Lê Việt Anh|8.0 | figure
-  R42 |  8/22/2020 | Phan Lê Phúc | How do you determine the cost of a spanning tree? |Mathematics_for_new.com|Đào Thu Thương|6.0 | figure
-  P46 | 10/10/2020 | Đào Nguyệt Nam | Which is optimal value in the case of job sequence problem Item : 1 2 3 4 5.. |https://www.geeksforgeeks.org|Uchiha Dương Mạnh|9.0 | figure
-  L58 |   2/6/2020 | Phan Dương Huyền | The committee wrote a ____________ report, extolling only the strengths of the proposal |http://w3school.com|Phạm Lê My|5.0 | figure
-  D46 |  7/23/2020 | Cao Dương Hiệp | Given the four functions f1(n) = n100 , f2(n) = (1.2)n , f3(n) = 2n/2 , f4(n) = 3n/3..... which function will have the largest value for sufficiently large values of n |https://www.geeksforgeeks.org|Nguyễn Mạnh Nam|10.0 | figure
-  O06 |  2/10/2020 | Cao Đức Mạnh |            |Mathematics_for_new.com|Uchiha Mạnh Giang|10.0 | figure
+  Z50 |  1/18/2020 | Greedy Problem1 | What is the missing number in the following sequence? 2, 12, 60, 240, 720, 1440, .... 0 |Phạm Mạnh Mạnh|Mathematics_for_new.com|4.0 | Greedy algorithm
+  H84 |  3/13/2020 | Greedy Problem2 | The area of a square is ‘d’. What is the area of the circle which has the diagonal of the square as its diameter? |Phạm Dương Tiến|http://w3school.com|2.0 | Greedy algorithm
+  V53 |  1/15/2020 | Greedy Problem3 | How many edge are there in MCST generated from graph with 'n' vertices |Phan Lê Minh|Mathematics_for_new.com|5.0 | Greedy algorithm
+  O21 |  5/21/2020 | Greedy Problem4 | Prim’s & Kruskal’s algorithm run on a graph G and produce MCST TP and TK, respectively, and TP is different from TK. Find true statement? |Uchiha Dương Mạnh|https://www.geeksforgeeks.org|3.0 | Greedy algorithm
+  B95 |   6/1/2020 | Greedy Problem5 | Dijkstra algorithm is also called the …………………. shortest path problem. |Đào Dương Thương|https://www.geeksforgeeks.org|3.0 | Greedy algorithm
+  O63 |  6/16/2020 | Greedy Problem6 | In Greedy method we get ________ Feasible solutions |Cao Mạnh Anh|CodeSource.com|3.0 | Greedy algorithm
+  W90 |  6/27/2020 | Greedy Problem7 | Which of the following is true about Huffman Coding. |Đào Lê Thành|http://w3school.com|1.0 | Greedy algorithm
+  Y17 |  1/25/2020 | Greedy Problem8 | The files x1,x2,x3 are 3 files of length 30,20,10 records each. What is the optimal merge pattern value? |Bá Thu Dương|CodeSource.com|4.0 | Greedy algorithm
+  D61 |  2/26/2020 | Greedy Problem9 | Fractional knapsack is based on ____________method |Uchiha Nguyệt My|http://w3school.com|2.0 | Greedy algorithm
+  P95 | 10/25/2020 | Greedy Problem10 | The output of Kruskal and Prims algorithm is ________________ |Phạm Thu Anh|CodeSource.com|4.0 | Greedy algorithm
+  T43 |   8/8/2020 | Greedy Problem11 | What is a Greedy strategy for Optimal storage on tape |Bá Huyền Thương|http://w3school.com|4.0 | Greedy algorithm
+  U73 |  7/22/2020 | Greedy Problem12 | How do you determine the cost of a spanning tree? |Nguyễn Thu Thương|Mathematics_for_new.com|5.0 | Greedy algorithm
+  F75 |  8/12/2020 | Greedy Problem13 | Which is optimal value in the case of job sequence problem Item : 1 2 3 4 5.. |Đào Thu Tiến|https://www.geeksforgeeks.org|4.0 | Greedy algorithm
+  A55 |  1/27/2020 | Greedy Problem14 | The committee wrote a ____________ report, extolling only the strengths of the proposal |Nguyễn Dương Anh|http://w3school.com|4.0 | Greedy algorithm
+  E25 |  8/16/2020 | Greedy Problem15 | Given the four functions f1(n) = n100 , f2(n) = (1.2)n , f3(n) = 2n/2 , f4(n) = 3n/3..... which function will have the largest value for sufficiently large values of n |Cao Nguyệt Minh|Mathematics_for_new.com|3.0 | Greedy algorithm

@@ -84,32 +84,38 @@ public class ListProblems {
 
     public void FormatData() throws IOException {
         list.clear();
-        FileReader fr = new FileReader("Greedy algorithm.txt");
+        for(String x: CategoryList){
+          
+        FileReader fr = new FileReader(x+".txt");
         BufferedReader br = new BufferedReader(fr);
         String desX;
-        String x="Greedy algorithm";
+        int o=1;
         while (true) {
             desX = br.readLine();
             if(desX == null) break;
+            if(desX.compareTo("")==0) break;
             Problem a= new Problem();
             String codeX=GenerateCode();
             String dateX=GenerateDay();
-            String nameX=GenerateName();
+            String tach[]=x.split(" ");
+            String nameX= tach[0]+ " Problem"+o;
+            o++;
             String authorX=GenerateName();
             String linkX=GenerateLink();
             int typeX=0;
             int markX=GenerateMark();
             for(int i=0;i<CategoryList.length;i++){
                 if (CategoryList[i].compareToIgnoreCase(x)==0){
-                 typeX=i;   
+                 typeX=i+1;   
                 }
             }
-            a = new Problem(codeX, dateX, nameX, desX, authorX, linkX, markX, typeX);
+            a = new Problem(codeX, dateX, nameX, desX, linkX, authorX, markX, typeX);
             list.add(a);
         }
         
         fr.close();
         br.close();
+        }
         saveFile();
         
     }
@@ -253,12 +259,14 @@ public class ListProblems {
     }
 
     public void display() {
-        System.out.println("---------------------------------------Question Bank----------------------------------");
-        System.out.printf("%5s|%10s|%15s|%15s|%10s|%10s|%4s|%s\n", "ID", "Date", "Name", "Description", "Author", "Link", "Mark", "Category");
+        System.out.println("------------------------------------------------------Question Bank--------------------------------------------------");
+        System.out.printf("%5s|%10s|%20s|%25s|%5s|%20s|%s\n", "ID", "Date", "Name", "Author", "Mark", "Category", "link");
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i));
         }
     }
+    
+    
 
     public ArrayList<Problem> GenerateProblemList() {
         ArrayList<Problem> a = new ArrayList<>();
@@ -334,7 +342,7 @@ public class ListProblems {
   }
   public int GenerateMark(){
       Random random= new  Random();
-      return randomNum(1, 10)
+      return randomNum(1, 5)
       ;
   }
 }
