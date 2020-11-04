@@ -319,9 +319,9 @@ public class ListProblems {
         StringBuilder s = new StringBuilder();
         Random random = new Random();
         int num=randomNum(1, 10);
-        s.append(num+"/");
+        s.append(num+"-");
         num=randomNum(1, 30);
-        s.append(num+"/");
+        s.append(num+"-");
         s.append("2020");
         return s.toString();
     }
