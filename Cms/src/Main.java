@@ -3,8 +3,9 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.*;
+import Cms.*;
 public class Main{
- public static void main (String[] args){
+ public static void main (String[] args) throws IOException{
     ListProblems a= new ListProblems();
      try {
          a.loadFile();
@@ -15,5 +16,6 @@ public class Main{
         }
      } catch (IOException ex) {
      }
-}
+  
+    }
 }
