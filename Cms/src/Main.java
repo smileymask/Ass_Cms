@@ -18,6 +18,7 @@ public class Main{
  public static void main (String[] args) throws IOException{
    ContestantMethod a= new ContestantMethod();
    boolean check=a.login();
+   
 }
 
 }

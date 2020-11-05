@@ -150,8 +150,14 @@ public class ContestantMethod {
     public boolean login() {
        
 
-System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n" +
-                   "█▄▄ █▄█ █▄█ █ █:▀█");
+//System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n" +
+//                   "█▄▄ █▄█ █▄█ █ █:▀█");
+System.out.println("███████╗███████╗░█████╗░  ██╗██╗\n" +
+"██╔════╝██╔════╝██╔══██╗  ██║██║\n" +
+"█████╗░░█████╗░░██║░░╚═╝  ██║██║\n" +
+"██╔══╝░░██╔══╝░░██║░░██╗  ╚═╝╚═╝\n" +
+"██║░░░░░███████╗╚█████╔╝  ██╗██╗\n" +
+"╚═╝░░░░░╚══════╝░╚════╝░  ╚═╝╚═╝");
         Scanner input = new Scanner(System.in);
         System.out.print(" Enter your id: ");
         String id = input.nextLine();
@@ -162,7 +168,6 @@ System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n" +
                 return true;
             }
             } 
-                System.out.println("Please check your Id");
                 return false;
             
         }  
