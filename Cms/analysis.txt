@@ -1,0 +1,4 @@
+Bell polynomials, Bell polynomials of the second kind Bn,k(x1,x2,...,xn-k+1) are also called the partial Bell polynomials, where n and k are positive integers.
+Complex analysis, known as the theory of functions of a complex variable, is the branch of mathematical analysis that investigates functions of complex numbers.
+Functional analysis, the core of which is formed by the study of vector spaces endowed with some kind of limit-related structure, and the linear operators acting upon these spaces and respecting these structures in a suitable sense.
+Measure theory, A measure on a set is a systematic way to assign a number to each suitable subset of that set, intuitively interpreted as its size.
