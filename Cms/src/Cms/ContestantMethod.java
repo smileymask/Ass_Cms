@@ -148,22 +148,25 @@ public class ContestantMethod {
     }
 
     public boolean login() {
+       
+
+System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n" +
+                   "█▄▄ █▄█ █▄█ █ █:▀█");
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter your id: ");
+        System.out.print(" Enter your id: ");
         String id = input.nextLine();
-        System.out.println("Enter your password: ");
+        System.out.print(" Enter your password: ");
         String pw = input.nextLine();
         if (c.containsKey(id)) {
             if (pw.equals(c.get(id))) {
                 return true;
-            } else {
+            }
+            } 
                 System.out.println("Please check your Id");
                 return false;
-            }
-        } else {
-            return false;
-        }
-    }
+            
+        }  
+    
 
     public void print() {
         for (String i : c.keySet()) {
