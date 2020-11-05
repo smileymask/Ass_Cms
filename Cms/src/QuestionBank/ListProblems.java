@@ -268,51 +268,7 @@ public class ListProblems {
     
     
 
-    public ArrayList<Problem> GenerateProblemList() {
-        ArrayList<Problem> a = new ArrayList<>();
-        ArrayList<Problem> anaList = new ArrayList<>();
-        ArrayList<Problem> fiList = new ArrayList<>();
-        ArrayList<Problem> greList = new ArrayList<>();
-        ArrayList<Problem> dyList = new ArrayList<>();
-        ArrayList<Problem> graList = new ArrayList<>();
-        for (Problem i : list) {
-            if (i.getCategory().compareToIgnoreCase("analysis") == 0) {
-                anaList.add(i);
-            } else if (i.getCategory().compareToIgnoreCase("figure") == 0) {
-                fiList.add(i);
-            } else if (i.getCategory().compareToIgnoreCase("Greedy algorithm") == 0) {
-                greList.add(i);
-            } else if (i.getCategory().compareToIgnoreCase("Dynamic programming") == 0) {
-                dyList.add(i);
-            } else if (i.getCategory().compareToIgnoreCase("graph") == 0) {
-                graList.add(i);
-            }
-        }
-            int num=0;
-            if(anaList.size() != 0){
-                num = randomNum(0, (anaList.size() - 1));
-                a.add(anaList.get(num));
-            }
-            if(fiList.size() != 0){
-            num = randomNum(0, (fiList.size() - 1));
-            a.add(fiList.get(num));
-            }
-            if(greList.size() !=0){
-            num = randomNum(0, (greList.size() - 1));
-            a.add(greList.get(num));
-            }
-            if(dyList.size() !=0){
-            num = randomNum(0, (dyList.size() - 1));
-            a.add(dyList.get(num));
-            }
-            if(graList.size()!=0){
-            num = randomNum(0, (graList.size() - 1));
-            a.add(graList.get(num));
-            }
-        
-        return a;
-    }
-  
+   
 /// Generate Data 
     public  String GenerateCode() {
         StringBuilder s = new StringBuilder();
@@ -358,6 +314,49 @@ public class ListProblems {
       ;
   }
   // Hàm lấy ra ngẫu nhiễn 5 problem:
+  public ArrayList<Problem> GenerateProblemList() {
+        ArrayList<Problem> a = new ArrayList<>();
+        ArrayList<Problem> anaList = new ArrayList<>();
+        ArrayList<Problem> fiList = new ArrayList<>();
+        ArrayList<Problem> greList = new ArrayList<>();
+        ArrayList<Problem> dyList = new ArrayList<>();
+        ArrayList<Problem> graList = new ArrayList<>();
+        for (Problem i : list) {
+            if (i.getCategory().compareToIgnoreCase("analysis") == 0) {
+                anaList.add(i);
+            } else if (i.getCategory().compareToIgnoreCase("figure") == 0) {
+                fiList.add(i);
+            } else if (i.getCategory().compareToIgnoreCase("Greedy algorithm") == 0) {
+                greList.add(i);
+            } else if (i.getCategory().compareToIgnoreCase("Dynamic programming") == 0) {
+                dyList.add(i);
+            } else if (i.getCategory().compareToIgnoreCase("graph") == 0) {
+                graList.add(i);
+            }
+        }
+            int num=0;
+            if(anaList.size() != 0){
+                num = randomNum(0, (anaList.size() - 1));
+                a.add(anaList.get(num));
+            }
+            if(fiList.size() != 0){
+            num = randomNum(0, (fiList.size() - 1));
+            a.add(fiList.get(num));
+            }
+            if(greList.size() !=0){
+            num = randomNum(0, (greList.size() - 1));
+            a.add(greList.get(num));
+            }
+            if(dyList.size() !=0){
+            num = randomNum(0, (dyList.size() - 1));
+            a.add(dyList.get(num));
+            }
+            if(graList.size()!=0){
+            num = randomNum(0, (graList.size() - 1));
+            a.add(graList.get(num));
+            }
+        
+        return a;
+    }
   
-   
 }
