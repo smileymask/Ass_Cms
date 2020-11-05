@@ -1,23 +1,29 @@
-  S93 | 10-14-2020 | Greedy Problem1 | What is the missing number in the following sequence? 2, 12, 60, 240, 720, 1440, .... 0 |Cao Huyền Tiến|http://w3school.com|2.0 | Greedy algorithm
-  U55 |  4-17-2020 | Greedy Problem2 | The area of a square is ‘d’. What is the area of the circle which has the diagonal of the square as its diameter? |Cao Thu Huyền|Mathematics_for_new.com|5.0 | Greedy algorithm
-  V23 |  4-15-2020 | Greedy Problem3 | How many edge are there in MCST generated from graph with 'n' vertices |Phan Mạnh Phúc|http://w3school.com|2.0 | Greedy algorithm
-  B50 |   7-6-2020 | Greedy Problem4 | Prim’s & Kruskal’s algorithm run on a graph G and produce MCST TP and TK, respectively, and TP is different from TK. Find true statement? |Đào Nguyệt Thành|http://w3school.com|1.0 | Greedy algorithm
-  P52 |  6-27-2020 | Greedy Problem5 | Dijkstra algorithm is also called the …………………. shortest path problem. |Đào Nguyệt Dương|CodeSource.com|5.0 | Greedy algorithm
-  U78 | 10-22-2020 | Greedy Problem6 | In Greedy method we get ________ Feasible solutions |Uchiha Nguyệt Huyền|Mathematics_for_new.com|1.0 | Greedy algorithm
-  C30 |  7-12-2020 | Greedy Problem7 | Which of the following is true about Huffman Coding. |Bá Đức Giang|https://www.geeksforgeeks.org|3.0 | Greedy algorithm
-  J83 |  5-26-2020 | Greedy Problem8 | The files x1,x2,x3 are 3 files of length 30,20,10 records each. What is the optimal merge pattern value? |Phan Dương Việt Anh|http://w3school.com|1.0 | Greedy algorithm
-  U80 |  1-14-2020 | Greedy Problem9 | Fractional knapsack is based on ____________method |Đào Thu Giang|Mathematics_for_new.com|1.0 | Greedy algorithm
-  A18 |  2-28-2020 | Greedy Problem10 | The output of Kruskal and Prims algorithm is ________________ |Nguyễn Lê Nam|https://www.geeksforgeeks.org|4.0 | Greedy algorithm
-  D94 |  9-18-2020 | Greedy Problem11 | What is a Greedy strategy for Optimal storage on tape |Uchiha Lê Dương|CodeSource.com|2.0 | Greedy algorithm
-  D90 |  8-29-2020 | Greedy Problem12 | How do you determine the cost of a spanning tree? |Phạm Mạnh Huyền|http://w3school.com|3.0 | Greedy algorithm
-  Z81 | 10-20-2020 | Greedy Problem13 | Which is optimal value in the case of job sequence problem Item : 1 2 3 4 5.. |Cao Đức Hà|http://w3school.com|4.0 | Greedy algorithm
-  Z40 |  4-16-2020 | Greedy Problem14 | The committee wrote a ____________ report, extolling only the strengths of the proposal |Phạm Thu Minh|http://w3school.com|4.0 | Greedy algorithm
-  A61 |  7-24-2020 | Greedy Problem15 | Given the four functions f1(n) = n100 , f2(n) = (1.2)n , f3(n) = 2n/2 , f4(n) = 3n/3..... which function will have the largest value for sufficiently large values of n |Bá Mạnh Đạt|http://w3school.com|2.0 | Greedy algorithm
-  P53 | 10-16-2020 | Dynamic Problem1 | Ugly numbers, are numbers whose only prime factors are 2, 3 or 5. |Bá Dương Thành|http://w3school.com|4.0 | Dynamic programming
-  X66 |  9-22-2020 | Dynamic Problem2 | The Fibonacci numbers, are the numbers in the following integer sequence.0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, .. |Đào Mạnh Thương|http://w3school.com|4.0 | Dynamic programming
-  S77 |  5-24-2020 | Dynamic Problem3 | Bell Numbers, (Number of ways to Partition a Set) |Bá Thu Thành|Mathematics_for_new.com|4.0 | Dynamic programming
-  F02 |  9-26-2020 | Dynamic Problem4 | Shortest Common Supersequence,finding the shortest supersequence Z |Phan Huyền Minh|http://w3school.com|3.0 | Dynamic programming
-  A30 |  4-15-2020 | Dynamic Problem5 | Find,Find the best and worst case analysis of quick sort |Phan Thu Mạnh|CodeSource.com|5.0 | Dynamic programming
-  U38 |  2-14-2020 | Dynamic Problem6 | Derive,Derive the best case and worst case time complexity of Insertion sort |Uchiha Lê Đạt|CodeSource.com|3.0 | Dynamic programming
-  Z75 |  10-3-2020 | Dynamic Problem7 | traveling salesman,Write traveling salesman problem. |Bá Lê Tiến|Mathematics_for_new.com|5.0 | Dynamic programming
-  W36 | 10-25-2020 | Dynamic Problem8 | Dijkstra’s algorithm,Write Dijkstra’s algorithm |Đào Thu Việt Anh|CodeSource.com|2.0 | Dynamic programming
+  E41 |  2-19-2020 | figure Problem1 | Stamps,Supposed you found an old roll of $0.15 stamps. Can you use a combination of $0.33 stamps and $0.15 stamps to mail a package for exactly $1.77? |Uchiha Nguyệt Hiệp|http://w3school.com|5.0 | figure
+  U60 |   8-7-2020 | figure Problem2 | Double or not ,Would you rather work seven days at $20 per day or be paid $2 for the first day and have your salary double every day for a full calendar week? |Nguyễn Dương Thành|CodeSource.com|4.0 | figure
+  K62 |  3-11-2020 | figure Problem3 | body-mass,Some doctors use body-mass index (BMI) as a health risk indicator.Find your BMI ? |Nguyễn Nguyệt Thành|http://w3school.com|4.0 | figure
+  D05 |  4-17-2020 | figure Problem4 | PopCorn,Take two sheets of 8 1/2 by 11 inch paper. Roll one into a short cylinder and the other into a tall cylinder. Does on hold more than the other? |Uchiha Huyền Đạt|CodeSource.com|3.0 | figure
+  V32 |  1-12-2020 | figure Problem5 | Special Shape,Name a three-dimensional shape that has the same width all around. |Cao Nguyệt Dương|Mathematics_for_new.com|2.0 | figure
+  D90 |  7-23-2020 | figure Problem6 | up side down,What letters, when written in lowercase, can be read the same upside down as right side up? |Phan Dương Việt Anh|Mathematics_for_new.com|3.0 | figure
+  L88 |   2-1-2020 | Greedy Problem1 | What is the missing number in the following sequence? 2, 12, 60, 240, 720, 1440, .... 0 |Đào Đức Huyền|http://w3school.com|1.0 | Greedy algorithm
+  B73 |  1-27-2020 | Greedy Problem2 | The area of a square is ‘d’. What is the area of the circle which has the diagonal of the square as its diameter? |Nguyễn Huyền Nam|CodeSource.com|4.0 | Greedy algorithm
+  W76 | 10-29-2020 | Greedy Problem3 | How many edge are there in MCST generated from graph with 'n' vertices |Bá Mạnh Anh|https://www.geeksforgeeks.org|1.0 | Greedy algorithm
+  H20 |  5-18-2020 | Greedy Problem4 | Prim’s & Kruskal’s algorithm run on a graph G and produce MCST TP and TK, respectively, and TP is different from TK. Find true statement? |Nguyễn Huyền My|CodeSource.com|3.0 | Greedy algorithm
+  C30 |  2-14-2020 | Greedy Problem5 | Dijkstra algorithm is also called the …………………. shortest path problem. |Phạm Đức Thành|CodeSource.com|3.0 | Greedy algorithm
+  P61 |  8-28-2020 | Greedy Problem6 | In Greedy method we get ________ Feasible solutions |Phan Thu My|http://w3school.com|4.0 | Greedy algorithm
+  P55 |  4-24-2020 | Greedy Problem7 | Which of the following is true about Huffman Coding. |Phạm Huyền Giang|https://www.geeksforgeeks.org|1.0 | Greedy algorithm
+  R15 |  1-30-2020 | Greedy Problem8 | The files x1,x2,x3 are 3 files of length 30,20,10 records each. What is the optimal merge pattern value? |Nguyễn Huyền Dương|http://w3school.com|2.0 | Greedy algorithm
+  H81 | 10-18-2020 | Greedy Problem9 | Fractional knapsack is based on ____________method |Cao Dương Giang|https://www.geeksforgeeks.org|5.0 | Greedy algorithm
+  K61 |   9-5-2020 | Greedy Problem10 | The output of Kruskal and Prims algorithm is ________________ |Uchiha Mạnh Phúc|http://w3school.com|4.0 | Greedy algorithm
+  Z05 |  10-5-2020 | Greedy Problem11 | What is a Greedy strategy for Optimal storage on tape |Phạm Lê Đạt|CodeSource.com|2.0 | Greedy algorithm
+  V75 |  2-29-2020 | Greedy Problem12 | How do you determine the cost of a spanning tree? |Nguyễn Mạnh Thành|http://w3school.com|1.0 | Greedy algorithm
+  B27 |   4-8-2020 | Greedy Problem13 | Which is optimal value in the case of job sequence problem Item : 1 2 3 4 5.. |Nguyễn Lê Nam|http://w3school.com|3.0 | Greedy algorithm
+  U26 |  8-23-2020 | Greedy Problem14 | The committee wrote a ____________ report, extolling only the strengths of the proposal |Phạm Huyền Thương|http://w3school.com|4.0 | Greedy algorithm
+  M28 |   5-8-2020 | Greedy Problem15 | Given the four functions f1(n) = n100 , f2(n) = (1.2)n , f3(n) = 2n/2 , f4(n) = 3n/3..... which function will have the largest value for sufficiently large values of n |Đào Lê Anh|Mathematics_for_new.com|2.0 | Greedy algorithm
+  B65 |   3-6-2020 | Dynamic Problem1 | Ugly numbers, are numbers whose only prime factors are 2, 3 or 5. |Phan Nguyệt Thành|http://w3school.com|2.0 | Dynamic programming
+  C72 |  5-22-2020 | Dynamic Problem2 | The Fibonacci numbers, are the numbers in the following integer sequence.0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, .. |Phạm Lê Phúc|http://w3school.com|1.0 | Dynamic programming
+  A23 |  6-25-2020 | Dynamic Problem3 | Bell Numbers, (Number of ways to Partition a Set) |Bá Huyền Giang|CodeSource.com|1.0 | Dynamic programming
+  U68 |   7-8-2020 | Dynamic Problem4 | Shortest Common Supersequence,finding the shortest supersequence Z |Phan Mạnh Việt Anh|http://w3school.com|2.0 | Dynamic programming
+  F71 |  2-27-2020 | Dynamic Problem5 | Find,Find the best and worst case analysis of quick sort |Uchiha Huyền Tiến|https://www.geeksforgeeks.org|1.0 | Dynamic programming
+  R73 |  1-29-2020 | Dynamic Problem6 | Derive,Derive the best case and worst case time complexity of Insertion sort |Bá Mạnh Anh|Mathematics_for_new.com|2.0 | Dynamic programming
+  N48 |   1-8-2020 | Dynamic Problem7 | traveling salesman,Write traveling salesman problem. |Bá Nguyệt Việt Anh|CodeSource.com|5.0 | Dynamic programming
+  U58 |  9-14-2020 | Dynamic Problem8 | Dijkstra’s algorithm,Write Dijkstra’s algorithm |Phan Lê Anh|Mathematics_for_new.com|5.0 | Dynamic programming
