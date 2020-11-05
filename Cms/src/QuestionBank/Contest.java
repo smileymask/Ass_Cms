@@ -1,18 +1,17 @@
 package QuestionBank;
 import java.util.ArrayList;
 public class Contest{
-public String id,date,nameMake;
+public String id,nameMake;
 public ArrayList<Problem> QuestionList= new ArrayList<Problem>();
-
+public String date=java.time.LocalDate.now().toString();
+public ListProblems a= new ListProblems();
 public Contest() {
         this.id = "";
-        this.date = "";
         this.nameMake = "";
         
     }
-    public Contest(String id, String date, String nameMake,ArrayList<Problem> QuestionList) {
+    public Contest(String id,  String nameMake,ArrayList<Problem> QuestionList) {
         this.id = id;
-        this.date = date;
         this.nameMake = nameMake;
         this.QuestionList=QuestionList;
     }
@@ -49,10 +48,15 @@ public Contest() {
         this.QuestionList = QuestionList;
     }
 
-   public void GenerateContest(){
-       
+   public Contest GenerateContest(){
+       String idX=a.GenerateCode();
+       ArrayList<Problem> Lproblem=a.GenerateProblemList();
+       Contest a = new Contest(idX, "Mask", Lproblem);
+       return a;
    }
+public void display(){
     
+}
 
    
 
