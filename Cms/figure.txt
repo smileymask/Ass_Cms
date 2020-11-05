@@ -1,0 +1,6 @@
+Stamps,Supposed you found an old roll of $0.15 stamps. Can you use a combination of $0.33 stamps and $0.15 stamps to mail a package for exactly $1.77?
+Double or not ,Would you rather work seven days at $20 per day or be paid $2 for the first day and have your salary double every day for a full calendar week?
+body-mass,Some doctors use body-mass index (BMI) as a health risk indicator.Find your BMI ?
+PopCorn,Take two sheets of 8 1/2 by 11 inch paper. Roll one into a short cylinder and the other into a tall cylinder. Does on hold more than the other?
+Special Shape,Name a three-dimensional shape that has the same width all around.
+up side down,What letters, when written in lowercase, can be read the same upside down as right side up?
