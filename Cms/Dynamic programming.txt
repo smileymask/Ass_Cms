@@ -1,0 +1,10 @@
+Ugly numbers, are numbers whose only prime factors are 2, 3 or 5.
+The Fibonacci numbers, are the numbers in the following integer sequence.0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ..
+Bell Numbers, (Number of ways to Partition a Set)
+Shortest Common Supersequence,finding the shortest supersequence Z
+Find,Find the best and worst case analysis of quick sort
+Derive,Derive the best case and worst case time complexity of Insertion sort
+traveling salesman,Write traveling salesman problem.
+Dijkstra’s algorithm,Write Dijkstra’s algorithm
+
+ 

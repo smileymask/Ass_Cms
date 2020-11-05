@@ -1,0 +1,16 @@
+What is the missing number in the following sequence? 2, 12, 60, 240, 720, 1440, .... 0
+The area of a square is ‘d’. What is the area of the circle which has the diagonal of the square as its diameter?
+How many edge are there in MCST generated from graph with 'n' vertices
+Prim’s & Kruskal’s algorithm run on a graph G and produce MCST TP and TK, respectively, and TP is different from TK. Find true statement?
+Dijkstra algorithm is also called the …………………. shortest path problem.
+In Greedy method we get ________ Feasible solutions
+Which of the following is true about Huffman Coding.
+The files x1,x2,x3 are 3 files of length 30,20,10 records each. What is the optimal merge pattern value?
+Fractional knapsack is based on ____________method
+The output of Kruskal and Prims algorithm is ________________
+What is a Greedy strategy for Optimal storage on tape
+How do you determine the cost of a spanning tree?
+Which is optimal value in the case of job sequence problem Item : 1 2 3 4 5..
+The committee wrote a ____________ report, extolling only the strengths of the proposal
+Given the four functions f1(n) = n100 , f2(n) = (1.2)n , f3(n) = 2n/2 , f4(n) = 3n/3..... which function will have the largest value for sufficiently large values of n
+
