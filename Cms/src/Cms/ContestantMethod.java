@@ -229,4 +229,5 @@ public class ContestantMethod {
             }
         }
     }
+    public void ba(){}
 }
