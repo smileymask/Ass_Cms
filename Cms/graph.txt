@@ -1,0 +1,2 @@
+Draw,To draw the graph of a line, the least number of points required is _____.
+Point,The point of intersection of co-ordinate axes is called ____.

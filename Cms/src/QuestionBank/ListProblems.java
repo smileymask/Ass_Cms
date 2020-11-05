@@ -287,18 +287,29 @@ public class ListProblems {
             } else if (i.getCategory().compareToIgnoreCase("graph") == 0) {
                 graList.add(i);
             }
-            int num = randomNum(0, (anaList.size() - 1));
-            a.add(anaList.get(num));
+        }
+            int num=0;
+            if(anaList.size() != 0){
+                num = randomNum(0, (anaList.size() - 1));
+                a.add(anaList.get(num));
+            }
+            if(fiList.size() != 0){
             num = randomNum(0, (fiList.size() - 1));
             a.add(fiList.get(num));
+            }
+            if(greList.size() !=0){
             num = randomNum(0, (greList.size() - 1));
             a.add(greList.get(num));
+            }
+            if(dyList.size() !=0){
             num = randomNum(0, (dyList.size() - 1));
             a.add(dyList.get(num));
+            }
+            if(graList.size()!=0){
             num = randomNum(0, (graList.size() - 1));
             a.add(graList.get(num));
-        }
-
+            }
+        
         return a;
     }
   

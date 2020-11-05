@@ -3,17 +3,15 @@ import java.io.IOException;
 import java.util.*;
 import java.util.*;
 public class Main{
- public static void main (String[] args){
+ public static void main (String[] args) throws IOException{
     ListProblems a= new ListProblems();
-     try {
-         a.FormatData();
+        a.loadFile();
         ArrayList<Problem> k= new ArrayList<>();
-        a.display();
+        k=a.GenerateProblemList();
         for(Problem s: k){
-            System.out.println(s);
+            System.out.print(s);
         }
-     } catch (IOException ex) {
-     }
+     
 //        String dayy=java.time.LocalDate.now().toString();
 //        System.out.println(dayy);
 
