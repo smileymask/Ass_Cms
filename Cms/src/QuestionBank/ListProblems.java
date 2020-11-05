@@ -301,6 +301,7 @@ public class ListProblems {
 
         return a;
     }
+  
 /// Generate Data 
     public  String GenerateCode() {
         StringBuilder s = new StringBuilder();
@@ -345,4 +346,7 @@ public class ListProblems {
       return randomNum(1, 5)
       ;
   }
+  // Hàm lấy ra ngẫu nhiễn 5 problem:
+  
+   
 }
