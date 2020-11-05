@@ -16,7 +16,7 @@ public class ContestantMethod {
     public HashMap<String, String> c = new HashMap<String, String>();
     public ArrayList<Contestant> c1 = new ArrayList<>();
     public String s = "Test2.txt";
-
+    public String nameInfo;
     public void LoadFile(String file) throws IOException {
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
@@ -147,30 +147,38 @@ public class ContestantMethod {
         }
     }
 
-    public boolean login() {
-       
+    public boolean login() throws IOException {
+        LoadFile(s);
 
-//System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n" +
-//                   "█▄▄ █▄█ █▄█ █ █:▀█");
-System.out.println("███████╗███████╗░█████╗░  ██╗██╗\n" +
-"██╔════╝██╔════╝██╔══██╗  ██║██║\n" +
-"█████╗░░█████╗░░██║░░╚═╝  ██║██║\n" +
-"██╔══╝░░██╔══╝░░██║░░██╗  ╚═╝╚═╝\n" +
-"██║░░░░░███████╗╚█████╔╝  ██╗██╗\n" +
-"╚═╝░░░░░╚══════╝░╚════╝░  ╚═╝╚═╝");
+        System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n" +
+                   "█▄▄ █▄█ █▄█ █ █:▀█");
+
         Scanner input = new Scanner(System.in);
         System.out.print(" Enter your id: ");
-        String id = input.nextLine();
+        String id = input.nextLine().trim();
         System.out.print(" Enter your password: ");
-        String pw = input.nextLine();
+        String pw = input.nextLine().trim();
         if (c.containsKey(id)) {
             if (pw.equals(c.get(id))) {
+                for(Contestant i: c1){
+                    if(i.getId().compareToIgnoreCase(id)==0){
+                        setNameInfo(i.getName());
+                    }
+                }
                 return true;
             }
             } 
                 return false;
             
         }  
+
+    public void setNameInfo(String nameInfo) {
+        this.nameInfo = nameInfo;
+    }
+
+    public String getNameInfo() {
+        return nameInfo;
+    }
     
 
     public void print() {

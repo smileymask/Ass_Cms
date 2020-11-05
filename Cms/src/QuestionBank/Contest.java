@@ -1,4 +1,5 @@
 package QuestionBank;
+import java.io.IOException;
 import java.util.ArrayList;
 public class Contest{
 public String id,nameMake;
@@ -48,14 +49,44 @@ public Contest() {
         this.QuestionList = QuestionList;
     }
 
-   public Contest GenerateContest(){
+   public Contest GenerateContest(String name) throws IOException{
+       a.loadFile();
        String idX=a.GenerateCode();
        ArrayList<Problem> Lproblem=a.GenerateProblemList();
-       Contest a = new Contest(idX, "Mask", Lproblem);
+      
+       Contest a = new Contest(idX, name, Lproblem);
        return a;
    }
+public void displayString(String s){
+    String list[] =s.split(" ");
+    int cout=0;
+    for(int i=0;i<list.length;i++){
+        System.out.print(list[i]+" ");
+        cout++;
+        if(cout ==10){
+            System.out.println("");
+            System.out.print("\t");
+            cout =0;
+        }
+    }
+}
 public void display(){
-    
+    int cout=1;
+    System.out.println("--------------------TEST-----------------------------");
+    System.out.println("ID: "+getId());
+    System.out.println("Date: "+ getDate());
+    System.out.println("Maker name: "+getNameMake());
+    System.out.println("");
+    for(Problem i : QuestionList){
+        System.out.println("------------");
+        System.out.println("|Question "+cout+"| "+i.getName().toUpperCase());
+        System.out.println("------------");
+        System.out.print("\tDescription: ");
+        displayString(i.getShortDes());
+        System.out.println("");
+        System.out.println("\t\t\t\t|Mark:"+i.getMark());
+        cout++;
+    }
 }
 
    

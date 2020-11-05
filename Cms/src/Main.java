@@ -18,7 +18,11 @@ public class Main{
  public static void main (String[] args) throws IOException{
    ContestantMethod a= new ContestantMethod();
    boolean check=a.login();
-   
+   // Make a test
+    Contest b= new Contest();
+    b=b.GenerateContest(a.getNameInfo());
+    b.display();
+   //------------------------------------------
 }
 
 }
