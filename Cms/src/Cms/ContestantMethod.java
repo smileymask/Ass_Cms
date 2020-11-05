@@ -6,85 +6,173 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class ContestantMethod {
 
     public HashMap<String, String> c = new HashMap<String, String>();
+    public ArrayList<Contestant> c1 = new ArrayList<>();
 
     public void LoadFile(String file) throws IOException {
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
+        c.clear();
+        c1.removeAll(c1);
         String s;
         String s1[];
-        String id;
+        String id, name, email, mobilephone;
         String password;
+        int rank;
         while (true) {
             s = br.readLine();
+
             if (s == null) {
                 break;
             }
-                s1 = s.split("|");
-                id = s1[1];
-                password = s1[2];
-                c.put(id, password);
+            if (s.compareToIgnoreCase("") == 0) {
+                break;
             }
-         fr.close();
-         br.close();
+            s1 = s.split("\\|");
+            name = s1[0];
+            id = s1[1];
+            password = s1[2];
+            email = s1[3];
+            mobilephone = s1[4];
+            rank = Integer.parseInt(String.valueOf(s1[5]));
+            c.put(id, password);
+            Contestant e = new Contestant(name, id, password, email, mobilephone, rank);
+            c1.add(e);
         }
-    public void add(String file) throws IOException{
-      FileWriter fw = new FileWriter(file);
-      BufferedWriter bw = new BufferedWriter(fw);
-      PrintWriter pw = new PrintWriter(fw);
-      Scanner input = new Scanner(System.in);
-      System.out.print("Enter the number of Contestants you want to add: ");
-      int nu = input.nextInt();
-      for(int i = 0; i < nu; i++){
-          System.out.println("Enter the information of Contestants: ");
-          System.out.print("Enter Name: ");
-          String name = input.next();
-          System.out.print("Enter Contestant's Id: ");
-          String id = input.next();
-          System.out.print("Enter Password: ");
-          String password = input.next();
-          System.out.print("Enter Email: ");
-          String email = input.next();
-          System.out.println("Enter Phonenumber: ");
-          String phonenumber = input.next();
-          System.out.println("Enter rank: ");
-          int rank = input.nextInt();
-          Contestant m = new Contestant(name, id, password, email, phonenumber, rank);
-          pw.println(m);
-      }     
-          LoadFile(file);
-          bw.close();
-      
-    }
-    public boolean login(){
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter your id: ");
-        String uid = input.next();
-        System.out.print("Enter your password: ");
-        String upw = input.next();
-        if (c.containsKey(uid)) {
-            if(upw == c.get(uid)){
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-        else{
-            return false;
-        }      
-    }
-    
-    public void print() {
-        for (String i : c.keySet()) {
-            System.out.println(i + ": " + c.get(i));
-        }
-    }
+        fr.close();
+        br.close();
     }
 
-   
+    public void savefile(String file) throws IOException {
+        FileWriter fw = new FileWriter(file);
+        PrintWriter pw = new PrintWriter(file);
+        Contestant m;
+        for (int i = 0; i < c1.size(); i++) {
+            m = c1.get(i);
+            pw.print(c1.get(i).getName() + "|" + c1.get(i).getId() + "|" + c1.get(i).getPassword()
+                    + "|" + c1.get(i).getEmail() + "|" + c1.get(i).getMobilephone() + "|" + c1.get(i).getRank() + "\n");
+        }
+        fw.close();
+        pw.close();
+    }
+
+    public void changeData(String file) throws IOException {
+        Scanner input = new Scanner(System.in);
+        FileReader fr = new FileReader(file);
+        BufferedReader br = new BufferedReader(fr);
+        System.out.println("Enter the id of Contestant: ");
+        String id = input.nextLine();
+        int index = -1;
+        for (int i = 0; i < c1.size(); i++) {
+            if (id.equals(c1.get(i).getId())) {
+                index = i;
+                System.out.println("Tim thay roi nhe");
+                break;
+            }
+        }
+        if (index == -1) {
+            System.out.println("Please check your Contestant's Id");
+        } else {
+            while (true) {
+                System.out.println("Change profile of Contestant ");
+                System.out.println("1. Change Contestant's name: ");
+                System.out.println("2. Change Contestant's email: ");
+                System.out.println("3. Change Contestant's mobilephone: ");
+                System.out.println("4. Change Contestant's rank");
+                System.out.println("5. Change Contestant's password");
+                System.out.println("6. List the Arraylist");
+                System.out.println("7. List the Hashmap");
+                System.out.println("0. Exit");
+                System.out.print("Enter your choice: ");
+                int choice = Integer.parseInt(input.nextLine());
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter your name: ");
+                        String rename = input.nextLine();
+                        c1.get(index).setName(rename);
+                        System.out.println(c1.get(index).getName());
+                        savefile(file);
+                        break;
+                    case 2:
+                        System.out.print("Enter your email: ");
+                        String reemail = input.nextLine();
+                        c1.get(index).setEmail(reemail);
+                        System.out.println(c1.get(index).getEmail());
+                        savefile(file);
+                        break;
+                    case 3:
+                        System.out.println("Enter your mobilephone: ");
+                        String remobilephone = input.nextLine();
+                        c1.get(index).setMobilephone(remobilephone);
+                        System.out.println(c1.get(index).getMobilephone());
+                        savefile(file);
+                        break;
+                    case 4:
+                        System.out.println("Enter your rank: ");
+                        int rerank = Integer.parseInt(input.nextLine());
+                        c1.get(index).setRank(rerank);
+                        System.out.println(c1.get(index).getRank());
+                        savefile(file);
+                        break;
+                    case 5:
+                        System.out.println("Reenter your password: ");
+                        String password = input.nextLine();
+                        if (password.equals(c.get(id))) {
+                            System.out.println("Enter your new password");
+                            String repass = input.nextLine();
+                            c1.get(index).setPassword(repass);
+                            savefile(file);
+                            LoadFile(file);
+                            break;
+                        }
+                    case 6:
+                        print2();
+                        break;
+                    case 7:
+                        print();
+                        break;
+                    case 0:
+                        return;
+                }
+            }
+
+        }
+    }
+
+    public boolean login() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter your id: ");
+        String id = input.nextLine();
+        System.out.println("Enter your password: ");
+        String pw = input.nextLine();
+        if (c.containsKey(id)) {
+            if (pw.equals(c.get(id))) {
+                return true;
+            } else {
+                System.out.println("Please check your Id");
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public void print() {
+        for (String i : c.keySet()) {
+            System.out.println(i + "\t" + c.get(i));
+        }
+    }
+
+    public void print2() {
+        for (int i = 0; i < c1.size(); i++) {
+            System.out.println(c1.get(i));
+        }
+    }
+}
