@@ -15,6 +15,7 @@ public class ContestantMethod {
 
     public HashMap<String, String> c = new HashMap<String, String>();
     public ArrayList<Contestant> c1 = new ArrayList<>();
+    public String s = "Test2.txt";
 
     public void LoadFile(String file) throws IOException {
         FileReader fr = new FileReader(file);
@@ -173,6 +174,59 @@ public class ContestantMethod {
     public void print2() {
         for (int i = 0; i < c1.size(); i++) {
             System.out.println(c1.get(i));
+        }
+    }
+    public void OverallProgram() throws IOException{
+        Scanner sc = new Scanner(System.in);
+        LoadFile(s);
+        while (true) {
+            System.out.println(" 1.Login ");
+            System.out.println(" 2.List the hashmap");
+            System.out.println(" 3.List the ArrayList");
+            System.out.println(" 0.Exit");
+            System.out.print(" Your choice: ");
+            int choice = Integer.parseInt(sc.nextLine());
+            if (choice == 0) {
+                break;
+            }
+            switch (choice) {
+                case 1:
+                    if (login() == true) {
+                        System.out.println("Success");
+                        System.out.println("Do you want to change Contestant informations Y/N ");
+                        String ch = sc.nextLine();
+                        if (ch.equals("Y")) {
+                            while (true) {
+                                System.out.println("1. Change data");
+                                System.out.println("2. Exit");
+                                int choice2 = Integer.parseInt(sc.nextLine());
+                                switch (choice2) {
+                                    case 1:
+                                        changeData(s);
+                                        break;
+                                    case 2:
+                                        return;
+                                }
+                            }
+                        } else {
+                            break;
+                        }
+
+                    } else {
+                        System.out.println("Please check your Id and Pasword ");
+                    }
+                    break;
+                case 2:
+                    print();
+                    break;
+                case 3:
+                    print2();
+                    break;
+                case 0:
+                    return;
+                default:
+                    System.out.println("Invalid choice!");
+            }
         }
     }
 }
