@@ -155,13 +155,13 @@ public class ContestantMethod {
 
         Scanner input = new Scanner(System.in);
         System.out.print(" Enter your id: ");
-        String id = input.nextLine().trim();
+        String id = input.nextLine().toLowerCase().trim();
         System.out.print(" Enter your password: ");
         String pw = input.nextLine().trim();
         if (c.containsKey(id)) {
             if (pw.equals(c.get(id))) {
                 for(Contestant i: c1){
-                    if(i.getId().compareToIgnoreCase(id)==0){
+                    if(i.getId().compareTo(id)==0){
                         setNameInfo(i.getName());
                     }
                 }

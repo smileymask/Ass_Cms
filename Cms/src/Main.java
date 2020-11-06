@@ -21,6 +21,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         ContestantMethod a = new ContestantMethod();
         ListProblems LP= new ListProblems();
+        LP.loadFile();
        while(true){ 
         boolean check=a.login();
         if(check) break;
@@ -62,12 +63,15 @@ public class Main {
                     break;
                 }
                 case 3:{
+                    LP.add();
                     break;
                 }
                 case 4:{
+                    LP.update();
                     break;
                 }
                 case 5:{
+                    LP.display();
                     break;
                 }
                 case 6:{

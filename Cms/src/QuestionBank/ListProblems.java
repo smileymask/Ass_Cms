@@ -1,4 +1,4 @@
-package QuestionBank;
+    package QuestionBank;
 
 import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.io.*;
@@ -286,9 +286,9 @@ public class ListProblems {
     public String GenerateDay(){
         StringBuilder s = new StringBuilder();
         Random random = new Random();
-        int num=randomNum(1, 10);
+        int num=randomNum(1, 30);
         s.append(num+"-");
-        num=randomNum(1, 30);
+        num=randomNum(1, 10);
         s.append(num+"-");
         s.append("2020");
         return s.toString();
