@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Contest{
 public String id,nameMake;
 public ArrayList<Problem> QuestionList= new ArrayList<Problem>();
-public String date=java.time.LocalDate.now().toString();
+public String date=reverseDate(java.time.LocalDate.now().toString());
 public ListProblems a= new ListProblems();
 public Contest() {
         this.id = "";
@@ -16,7 +16,14 @@ public Contest() {
         this.nameMake = nameMake;
         this.QuestionList=QuestionList;
     }
-
+    public String reverseDate(String date){
+        String list[]=date.split("-");
+        StringBuilder s= new StringBuilder();
+        for(int i=(list.length-1);i>=0;i--){
+            s.append(list[i]+" ");
+        }
+        return s.toString();
+    }
     public String getId() {
         return id;
     }
@@ -77,6 +84,7 @@ public void display(){
     System.out.println("Date: "+ getDate());
     System.out.println("Maker name: "+getNameMake());
     System.out.println("");
+    int r=0;
     for(Problem i : QuestionList){
         System.out.println("------------");
         System.out.println("|Question "+cout+"| "+i.getName().toUpperCase());
@@ -86,7 +94,11 @@ public void display(){
         System.out.println("");
         System.out.println("\t\t\t\t|Mark:"+i.getMark());
         cout++;
+        r+= i.getMark();
     }
+        System.out.println("Total: "+r);
+        System.out.println("----------------------------------------------");
+             
 }
 
    
