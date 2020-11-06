@@ -37,7 +37,7 @@ public class ListProblems {
         Problem x = new Problem();
         while (true) {
             s = br.readLine();
-            if (s == null) {
+            if (s == null|| s.compareTo("")==0) {
                 break;
             }
             a = s.split("[|]");
