@@ -91,6 +91,7 @@ public static boolean check(){
                     break;
                 }
                 case 4:{
+                    LP.display();
                     LP.update();
                     while(true){
                         check= check();
@@ -103,13 +104,8 @@ public static boolean check(){
                 }
                 case 5:{
                     LP.display();
-                    while(true){
-                        check= check();
-                        if(check) LP.display();
-                        else{
-                            break;
-                        }
-                    }
+                   
+                    
                     break;
                 }
                 case 6:{
