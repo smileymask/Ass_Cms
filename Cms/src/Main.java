@@ -15,10 +15,7 @@ import Cms.*;
 //Tien|he153125|0326484853|quetien|1234|1
 //Van|ha153020|0392843701|thaovan|1234|1
 //Manh|he150883|0389621169|ducmanh|1234|1
-public class Main {
-
-    
-=======
+public class Main {   
 public static boolean check(){
     Scanner input = new Scanner(System.in);
     String choice;
@@ -77,10 +74,8 @@ public static boolean check2(){
 
         Contest b = new Contest();
         b = b.GenerateContest(a.getNameInfo());
-
-
-       }
-    Contest b= new Contest();
+        
+    Contest b1 = new Contest();
     boolean check ; 
 
         //------------------------------------------
@@ -127,8 +122,6 @@ public static boolean check2(){
                     break;
                 }
 
-                case 4: {
-=======
                 case 4:{
                     LP.display();
 
@@ -149,8 +142,6 @@ public static boolean check2(){
                     break;
                 }
 
-                case 6: {
-
                 case 6:{
                     while(true){
                     b=b.GenerateContest(a.getNameInfo());
@@ -165,9 +156,7 @@ public static boolean check2(){
                     break;
 
                 }
-                case 7: {
-=======
-                }case 7:{
+                case 7:{
                     while(true){
                     Contest c= b.getContest(LP);
                     if(c.getId().compareTo("")==0){
