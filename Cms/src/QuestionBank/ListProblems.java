@@ -37,7 +37,7 @@ public class ListProblems {
         Problem x = new Problem();
         while (true) {
             s = br.readLine();
-            if (s == null) {
+            if (s == null|| s.compareTo("")==0) {
                 break;
             }
             a = s.split("[|]");
@@ -223,6 +223,15 @@ public class ListProblems {
             System.out.println("Id not Found !");
         }
 
+    }
+    public Problem getProblem(String s){
+        for(Problem i : list){
+            if(i.getId().compareTo(s)==0){
+                return i;
+            }
+        }
+        System.out.println("Not found !");
+        return list.get(0);
     }
 
     public void add() throws IOException { // 3.Add a new problem to the Question Bank (QB) 
