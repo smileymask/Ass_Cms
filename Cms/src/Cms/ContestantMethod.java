@@ -149,8 +149,6 @@ public class ContestantMethod {
 
     public boolean login() throws IOException {
         LoadFile(s);
-<<<<<<< HEAD
-=======
 
         System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n" +
                    "█▄▄ █▄█ █▄█ █ █:▀█");
@@ -160,7 +158,6 @@ public class ContestantMethod {
         String id = input.nextLine().toLowerCase().trim();
         System.out.print(" Enter your password: ");
         String pw = input.nextLine().trim();
->>>>>>> upstream/main
         if (c.containsKey(id)) {
             if (pw.equals(c.get(id))) {
                 for(Contestant i: c1){
