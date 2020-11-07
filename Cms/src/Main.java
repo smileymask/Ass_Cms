@@ -16,22 +16,28 @@ import Cms.*;
 //Van|ha153020|0392843701|thaovan|1234|1
 //Manh|he150883|0389621169|ducmanh|1234|1
 public class Main {
-
+    
     public static void main(String[] args) throws IOException {
+        String id;
         Scanner input = new Scanner(System.in);
         ContestantMethod a = new ContestantMethod();
-        ListProblems LP= new ListProblems();
+        ListProblems LP = new ListProblems();
         LP.loadFile();
-       while(true){ 
-        boolean check=a.login();
-        if(check) break;
-        else{
-            System.out.println("Please Check your ID or Password !");
+        while (true) {
+        System.out.print(" Enter your id: ");
+         id = input.nextLine().toLowerCase().trim();
+        System.out.print(" Enter your password: ");
+        String pw = input.nextLine().trim();            
+            boolean check = a.login(id, pw);
+            if (check) {
+                break;
+            } else {
+                System.out.println("Please Check your ID or Password !");
+            }
         }
-       }
-    Contest b= new Contest();
-    b=b.GenerateContest(a.getNameInfo());
-    
+        Contest b = new Contest();
+        b = b.GenerateContest(a.getNameInfo());
+
         //------------------------------------------
         while (true) {
             System.out.println("1.Show information of Contestant");
@@ -45,52 +51,55 @@ public class Main {
             System.out.println("9.Save, load, and export information functions from QBs.dat file or other specific files" + "\n" + "When system start running, load default QBs.dat file into memory to use.");
             System.out.println("10.Log Out");
             System.out.println("0.Exits");
-            int choice=0;
-            while(true){
+            int choice = 0;
+            while (true) {
                 try {
-                System.out.print("Your choice: ");
-                choice = Integer.parseInt(input.nextLine());
-                break;
+                    System.out.print("Your choice: ");
+                    choice = Integer.parseInt(input.nextLine());
+                    break;
                 } catch (NumberFormatException e) {
                     System.out.println("Please enter number !");
                 }
             }
-            switch(choice){
-                case 1:{
+            switch (choice) {
+                case 1: {
+                    a.showInfor(id);
                     break;
                 }
-                case 2:{
+                case 2: {
+                    a.changeData(id);
                     break;
                 }
-                case 3:{
+                case 3: {
                     LP.add();
                     break;
                 }
-                case 4:{
+                case 4: {
                     LP.update();
                     break;
                 }
-                case 5:{
+                case 5: {
                     LP.display();
                     break;
                 }
-                case 6:{
+                case 6: {
                     b.display();
                     break;
-                }case 7:{
+                }
+                case 7: {
                     break;
                 }
-                case 8:{
+                case 8: {
                     break;
                 }
-                case 9:{
+                case 9: {
                     LP.loadFile();
                     break;
                 }
-                case 10:{
+                case 10: {
                     break;
                 }
-                case 0:{
+                case 0: {
                     return;
                 }
             }
