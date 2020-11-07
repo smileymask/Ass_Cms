@@ -16,7 +16,46 @@ import Cms.*;
 //Van|ha153020|0392843701|thaovan|1234|1
 //Manh|he150883|0389621169|ducmanh|1234|1
 public class Main {
+
     
+=======
+public static boolean check(){
+    Scanner input = new Scanner(System.in);
+    String choice;
+    while(true){
+    System.out.print("Do you want to continue process ? (Y/N) : ");
+    choice = input.nextLine().toUpperCase();
+    if(choice.compareTo("Y")==0 || choice.compareTo("1")==0){
+        return true;
+    }
+    else if(choice.compareTo("N")==0 || choice.compareTo("0")==0){
+        return false;
+    }
+    else{
+        System.out.println("Please enter again !");
+    }
+    }
+    
+}
+public static boolean check2(){
+    Scanner input = new Scanner(System.in);
+    String choice;
+    while(true){
+    System.out.print("Do you want to save this contest ? (Y/N) : ");
+    choice = input.nextLine().toUpperCase();
+    if(choice.compareTo("Y")==0 || choice.compareTo("1")==0){
+        return true;
+    }
+    else if(choice.compareTo("N")==0 || choice.compareTo("0")==0){
+        return false;
+    }
+    else{
+        System.out.println("Please enter again !");
+    }
+    }
+    
+}
+
     public static void main(String[] args) throws IOException {
         String id;
         Scanner input = new Scanner(System.in);
@@ -35,8 +74,14 @@ public class Main {
                 System.out.println("Please Check your ID or Password !");
             }
         }
+
         Contest b = new Contest();
         b = b.GenerateContest(a.getNameInfo());
+
+
+       }
+    Contest b= new Contest();
+    boolean check ; 
 
         //------------------------------------------
         while (true) {
@@ -46,7 +91,7 @@ public class Main {
             System.out.println("4.Update full information for a particular problem by Problem ID");
             System.out.println("5.A list of all available problems in the QB");
             System.out.println("6.Generate a new Contest");
-            System.out.println("7.Print information of a Contest by ContestID (mã đề)");
+            System.out.println("7.Print information of a Contest by ContestID ");
             System.out.println("8.Sort all problems by Category as ascending order ");
             System.out.println("9.Save, load, and export information functions from QBs.dat file or other specific files" + "\n" + "When system start running, load default QBs.dat file into memory to use.");
             System.out.println("10.Log Out");
@@ -72,21 +117,68 @@ public class Main {
                 }
                 case 3: {
                     LP.add();
+                    while(true){
+                        check= check();
+                        if(check) LP.add();
+                        else{
+                            break;
+                        }
+                    }
                     break;
                 }
+
                 case 4: {
+=======
+                case 4:{
+                    LP.display();
+
                     LP.update();
+                    while(true){
+                        check= check();
+                        if(check) LP.update();
+                        else{
+                            break;
+                        }
+                    }
                     break;
                 }
                 case 5: {
                     LP.display();
+                   
+                    
                     break;
                 }
+
                 case 6: {
+
+                case 6:{
+                    while(true){
+                    b=b.GenerateContest(a.getNameInfo());
+
                     b.display();
+                    if(check2()){
+                        b.addContest(b);
+                    }
+                    if(!check()) break;
+                    }
+                    
                     break;
+
                 }
                 case 7: {
+=======
+                }case 7:{
+                    while(true){
+                    Contest c= b.getContest(LP);
+                    if(c.getId().compareTo("")==0){
+                        System.out.println("ID not Found !");
+                        if(!check()) break;
+                    }else{
+                    c.display();
+                    if(!check()) break;
+                    }
+                    }
+
                     break;
                 }
                 case 8: {
@@ -94,6 +186,10 @@ public class Main {
                 }
                 case 9: {
                     LP.loadFile();
+                    System.out.println("---------------------");
+                    System.out.println(" Load File success !");
+                    System.out.println("---------------------");
+                            
                     break;
                 }
                 case 10: {
