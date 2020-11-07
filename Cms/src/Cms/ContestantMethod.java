@@ -63,23 +63,13 @@ public class ContestantMethod {
         fw.close();
         pw.close();
     }
-    public void showInfor(String id) throws IOException {
-        int index = 0;
-        for (int i = 0; i < c1.size(); i++) {
-            if (id.equals(c1.get(i).getId())) {
-                index = i;
-                System.out.println("Tim thay roi nhe");
-                break;
-            }
-        }
-        System.out.println(c1.get(index).toString());
-    }
 
-    public void changeData(String id) throws IOException {
+    public void changeData(String file) throws IOException {
         Scanner input = new Scanner(System.in);
-        FileReader fr = new FileReader(s);
+        FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         System.out.println("Enter the id of Contestant: ");
+        String id = input.nextLine();
         int index = -1;
         for (int i = 0; i < c1.size(); i++) {
             if (id.equals(c1.get(i).getId())) {
@@ -109,28 +99,28 @@ public class ContestantMethod {
                         String rename = input.nextLine();
                         c1.get(index).setName(rename);
                         System.out.println(c1.get(index).getName());
-                        savefile(s);
+                        savefile(file);
                         break;
                     case 2:
                         System.out.print("Enter your email: ");
                         String reemail = input.nextLine();
                         c1.get(index).setEmail(reemail);
                         System.out.println(c1.get(index).getEmail());
-                        savefile(s);
+                        savefile(file);
                         break;
                     case 3:
                         System.out.println("Enter your mobilephone: ");
                         String remobilephone = input.nextLine();
                         c1.get(index).setMobilephone(remobilephone);
                         System.out.println(c1.get(index).getMobilephone());
-                        savefile(s);
+                        savefile(file);
                         break;
                     case 4:
                         System.out.println("Enter your rank: ");
                         int rerank = Integer.parseInt(input.nextLine());
                         c1.get(index).setRank(rerank);
                         System.out.println(c1.get(index).getRank());
-                        savefile(s);
+                        savefile(file);
                         break;
                     case 5:
                         System.out.println("Reenter your password: ");
@@ -139,8 +129,8 @@ public class ContestantMethod {
                             System.out.println("Enter your new password");
                             String repass = input.nextLine();
                             c1.get(index).setPassword(repass);
-                            savefile(s);
-                            LoadFile(s);
+                            savefile(file);
+                            LoadFile(file);
                             break;
                         }
                     case 6:
@@ -157,11 +147,17 @@ public class ContestantMethod {
         }
     }
 
-    public boolean login(String id, String pw) throws IOException {
+    public boolean login() throws IOException {
         LoadFile(s);
 
         System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n" +
                    "█▄▄ █▄█ █▄█ █ █:▀█");
+
+        Scanner input = new Scanner(System.in);
+        System.out.print(" Enter your id: ");
+        String id = input.nextLine().toLowerCase().trim();
+        System.out.print(" Enter your password: ");
+        String pw = input.nextLine().trim();
         if (c.containsKey(id)) {
             if (pw.equals(c.get(id))) {
                 for(Contestant i: c1){
@@ -196,58 +192,58 @@ public class ContestantMethod {
             System.out.println(c1.get(i));
         }
     }
-//    public void OverallProgram() throws IOException{
-//        Scanner sc = new Scanner(System.in);
-//        LoadFile(s);
-//        while (true) {
-//            System.out.println(" 1.Login ");
-//            System.out.println(" 2.List the hashmap");
-//            System.out.println(" 3.List the ArrayList");
-//            System.out.println(" 0.Exit");
-//            System.out.print(" Your choice: ");
-//            int choice = Integer.parseInt(sc.nextLine());
-//            if (choice == 0) {
-//                break;
-//            }
-//            switch (choice) {
-//                case 1:
-//                    if (login(id, pw) == true) {
-//                        System.out.println("Success");
-//                        System.out.println("Do you want to change Contestant informations Y/N ");
-//                        String ch = sc.nextLine();
-//                        if (ch.equals("Y")) {
-//                            while (true) {
-//                                System.out.println("1. Change data");
-//                                System.out.println("2. Exit");
-//                                int choice2 = Integer.parseInt(sc.nextLine());
-//                                switch (choice2) {
-//                                    case 1:
-//                                        changeData();
-//                                        break;
-//                                    case 2:
-//                                        return;
-//                                }
-//                            }
-//                        } else {
-//                            break;
-//                        }
-//
-//                    } else {
-//                        System.out.println("Please check your Id and Pasword ");
-//                    }
-//                    break;
-//                case 2:
-//                    print();
-//                    break;
-//                case 3:
-//                    print2();
-//                    break;
-//                case 0:
-//                    return;
-//                default:
-//                    System.out.println("Invalid choice!");
-//            }
-//        }
-//    }
+    public void OverallProgram() throws IOException{
+        Scanner sc = new Scanner(System.in);
+        LoadFile(s);
+        while (true) {
+            System.out.println(" 1.Login ");
+            System.out.println(" 2.List the hashmap");
+            System.out.println(" 3.List the ArrayList");
+            System.out.println(" 0.Exit");
+            System.out.print(" Your choice: ");
+            int choice = Integer.parseInt(sc.nextLine());
+            if (choice == 0) {
+                break;
+            }
+            switch (choice) {
+                case 1:
+                    if (login() == true) {
+                        System.out.println("Success");
+                        System.out.println("Do you want to change Contestant informations Y/N ");
+                        String ch = sc.nextLine();
+                        if (ch.equals("Y")) {
+                            while (true) {
+                                System.out.println("1. Change data");
+                                System.out.println("2. Exit");
+                                int choice2 = Integer.parseInt(sc.nextLine());
+                                switch (choice2) {
+                                    case 1:
+                                        changeData(s);
+                                        break;
+                                    case 2:
+                                        return;
+                                }
+                            }
+                        } else {
+                            break;
+                        }
+
+                    } else {
+                        System.out.println("Please check your Id and Pasword ");
+                    }
+                    break;
+                case 2:
+                    print();
+                    break;
+                case 3:
+                    print2();
+                    break;
+                case 0:
+                    return;
+                default:
+                    System.out.println("Invalid choice!");
+            }
+        }
+    }
     public void ba(){}
 }
