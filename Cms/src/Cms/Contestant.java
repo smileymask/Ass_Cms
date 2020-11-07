@@ -80,7 +80,7 @@ public class Contestant {
 
     @Override
     public String toString() {
-        return name + "|" + id + "|" + password + "|" + email + "|" + mobilephone + "|" + rank;
+        return "Contestant's name "+name + "Contestant's ID " + id  + "Contestant's email " + email + "Contestant's mobilephone " + mobilephone + "Contestant's rank " + rank;
         
     }
     
