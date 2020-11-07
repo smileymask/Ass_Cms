@@ -34,6 +34,24 @@ public static boolean check(){
     }
     
 }
+public static boolean check2(){
+    Scanner input = new Scanner(System.in);
+    String choice;
+    while(true){
+    System.out.print("Do you want to save this contest ? (Y/N) : ");
+    choice = input.nextLine().toUpperCase();
+    if(choice.compareTo("Y")==0 || choice.compareTo("1")==0){
+        return true;
+    }
+    else if(choice.compareTo("N")==0 || choice.compareTo("0")==0){
+        return false;
+    }
+    else{
+        System.out.println("Please enter again !");
+    }
+    }
+    
+}
     public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
         ContestantMethod a = new ContestantMethod();
@@ -47,7 +65,6 @@ public static boolean check(){
         }
        }
     Contest b= new Contest();
-    
     boolean check ; 
         //------------------------------------------
         while (true) {
@@ -109,20 +126,27 @@ public static boolean check(){
                     break;
                 }
                 case 6:{
+                    while(true){
                     b=b.GenerateContest(a.getNameInfo());
                     b.display();
-                    while(true){
-                        check= check();
-                        if(check) {
-                        b=b.GenerateContest(a.getNameInfo());
-                        b.display();
-                        }
-                        else{
-                            break;
-                        }
+                    if(check2()){
+                        b.addContest(b);
                     }
+                    if(!check()) break;
+                    }
+                    
                     break;
                 }case 7:{
+                    while(true){
+                    Contest c= b.getContest(LP);
+                    if(c.getId().compareTo("")==0){
+                        System.out.println("ID not Found !");
+                        if(!check()) break;
+                    }else{
+                    c.display();
+                    if(!check()) break;
+                    }
+                    }
                     break;
                 }
                 case 8:{
