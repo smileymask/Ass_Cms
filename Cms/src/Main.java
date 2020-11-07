@@ -11,17 +11,11 @@ import Cms.*;
 //ha153020	
 
 //Anh|he151274|0983569165|acbd|1234|1
-
-//Anh|he151274|0983569165|acbd|1234|1
 //Phuc Ha|hs153019|0881730654a|phucha|1234|1
 //Tien|he153125|0326484853|quetien|1234|1
 //Van|ha153020|0392843701|thaovan|1234|1
 //Manh|he150883|0389621169|ducmanh|1234|1
-<<<<<<< HEAD
-public class Main {   
-=======
 public class Main {
->>>>>>> upstream/main
 public static boolean check(){
     Scanner input = new Scanner(System.in);
     String choice;
@@ -69,16 +63,8 @@ public static boolean check2(){
         else{
             System.out.println("Please Check your ID or Password !");
         }
-<<<<<<< HEAD
-
-        Contest b = new Contest();
-        b = b.GenerateContest(a.getNameInfo());
-        
-    Contest b1 = new Contest();
-=======
        }
     Contest b= new Contest();
->>>>>>> upstream/main
     boolean check ; 
         //------------------------------------------
         while (true) {
@@ -121,10 +107,6 @@ public static boolean check2(){
                     }
                     break;
                 }
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/main
                 case 4:{
                     LP.display();
                     LP.update();
@@ -143,10 +125,6 @@ public static boolean check2(){
                     
                     break;
                 }
-<<<<<<< HEAD
-
-=======
->>>>>>> upstream/main
                 case 6:{
                     while(true){
                     b=b.GenerateContest(a.getNameInfo());
@@ -158,13 +136,7 @@ public static boolean check2(){
                     }
                     
                     break;
-<<<<<<< HEAD
-
-                }
-                case 7:{
-=======
                 }case 7:{
->>>>>>> upstream/main
                     while(true){
                     Contest c= b.getContest(LP);
                     if(c.getId().compareTo("")==0){
