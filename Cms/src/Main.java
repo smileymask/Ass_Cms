@@ -155,18 +155,18 @@ public static boolean check2(){
                 case 9:{
                     LP.loadFile();
                     System.out.println("---------------------");
-                    System.out.println(" Load File success !");
-                    System.out.println("---------------------");
-                            
-                    break;
-                }
-                case 10:{
-                    break;
-                }
-                case 0:{
-                    return;
-                }
-            }
-        }
-    }
-}
+                                                                                                                                                                                            System.out.println(" Load File success !");
+                                                                                                                                                                                            System.out.println("---------------------");
+
+                                                                                                                                                                                            break;
+                                                                                                                                                                                        }
+                                                                                                                                                                                        case 10:{
+                                                                                                                                                                                            break;
+                                                                                                                                                                                        }
+                                                                                                                                                                                        case 0:{
+                                                                                                                                                                                            return;
+                                                                                                                                                                                        }
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                        }
