@@ -147,8 +147,8 @@ public class ListProblems {
         int xCategory;
         int choice;
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter Id: ");
-        xId = input.nextLine();
+        System.out.print("Enter Id: ");
+        xId = input.nextLine().toUpperCase();
         if (!checkId(xId)) {
             int x = FindId(xId);
             while (true) {
