@@ -135,6 +135,8 @@ FileWriter fw = new FileWriter("testBank.txt", true);
  pw.printf("%10s | %4s | %10s | %4d |%s|%s|%s|%s|%s|%s\n",timeStamp,a.getId(),a.getDate(),a.getTotalMark(),a.getNameMake(),a.getQuestionList().get(0).getId(),a.getQuestionList().get(1).getId(),a.getQuestionList().get(2).getId(),a.getQuestionList().get(3).getId(),a.getQuestionList().get(4).getId());
  pw.close();
 }
+
+
 public Contest getContest(ListProblems a) throws FileNotFoundException, IOException{
     Scanner input= new Scanner(System.in);
     Contest newCon= new Contest();

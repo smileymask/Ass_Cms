@@ -19,6 +19,18 @@ public class ListProblems {
     public final String fname = "Qbs.txt";
     public ArrayList<Problem> list = new ArrayList<>();
     public final Random generator = new Random();
+    public void sortList(ArrayList<Problem> list){
+        Collections.sort(list, new Comparator<Problem>() {
+            @Override
+            public int compare(Problem o1, Problem o2) {
+                return o1.getCategory().compareToIgnoreCase(o2.getCategory());
+            }
+        });
+    }
+    public void sort() throws IOException{
+        sortList(list);
+        saveFile();
+    }
 
     int randomNum(int min, int max) {
         return generator.nextInt((max - min) + 1) + min;
@@ -160,6 +172,8 @@ public class ListProblems {
                             yId = input.nextLine();
                             if (checkId(yId) || (yId.compareToIgnoreCase(xId) == 0)) {
                                 list.get(x).setId(yId);
+                                Contest con= new Contest();
+                                
                                 System.out.println("-------------------");
                                 System.out.println("  Update success !");
                                 System.out.println("-------------------");

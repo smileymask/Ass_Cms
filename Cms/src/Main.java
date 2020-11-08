@@ -75,7 +75,6 @@ public static boolean check2(){
             System.out.println("5.A list of all available problems in the QB");
             System.out.println("6.Generate a new Contest");
             System.out.println("7.Print information of a Contest by ContestID ");
-            System.out.println("8.Sort all problems by Category as ascending order ");
             System.out.println("9.Save, load, and export information functions from QBs.dat file or other specific files" + "\n" + "When system start running, load default QBs.dat file into memory to use.");
             System.out.println("10.Log Out");
             System.out.println("0.Exits");
@@ -108,14 +107,11 @@ public static boolean check2(){
                     break;
                 }
                 case 4:{
+                    while(true){
                     LP.display();
                     LP.update();
-                    while(true){
-                        check= check();
-                        if(check) LP.update();
-                        else{
-                            break;
-                        }
+                    LP.sort();
+                    if(!check()) break;
                     }
                     break;
                 }
@@ -149,9 +145,7 @@ public static boolean check2(){
                     }
                     break;
                 }
-                case 8:{
-                    break;
-                }
+                
                 case 9:{
                     LP.loadFile();
                     System.out.println("---------------------");
