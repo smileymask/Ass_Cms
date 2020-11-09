@@ -57,8 +57,14 @@ public static boolean check2(){
         ContestantMethod a = new ContestantMethod();
         ListProblems LP= new ListProblems();
         LP.loadFile();
-       while(true){ 
-        boolean check=a.login();
+        String id;
+       while(true){
+           
+           System.out.print(" Enter your id: ");
+            id = input.nextLine().toLowerCase().trim();
+            System.out.print(" Enter your password: ");
+            String pw = input.nextLine().trim();
+        boolean check=a.login(id,pw);
         if(check) break;
         else{
             System.out.println("Please Check your ID or Password !");
@@ -90,9 +96,11 @@ public static boolean check2(){
             }
             switch(choice){
                 case 1:{
+                    a.showInfor(id);
                     break;
                 }
                 case 2:{
+                    a.changeData(id);
                     break;
                 }
                 case 3:{

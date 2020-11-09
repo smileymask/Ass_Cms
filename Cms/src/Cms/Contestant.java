@@ -10,13 +10,13 @@ package Cms;
  * @author DELL
  */
 public class Contestant {
+
     String name;
     String id;
     String password;
     String email;
     String mobilephone;
-    int rank; 
-    
+    int rank;
 
     public Contestant() {
     }
@@ -80,9 +80,8 @@ public class Contestant {
 
     @Override
     public String toString() {
-        return name + "|" + id + "|" + password + "|" + email + "|" + mobilephone + "|" + rank;
-        
+        return "Contestant's name " + name + " Contestant's ID " + id + " Contestant's Email " + email + " Contestant's mobilephone " + mobilephone + " Contestant's rank " + rank;
+
     }
-    
 
 }
