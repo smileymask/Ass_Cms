@@ -107,7 +107,7 @@ public class Main {
             switch (choice) {
                 case 1: {
                     a.showInfor(id);
-                    check= check("Do you want to contunue process ? (Y/n)");
+                    check= check("Do you want to contunue process ? (Y/N): ");
                     if(!check){
                         System.exit(0);
                     }

@@ -187,7 +187,9 @@ public class ContestantMethod {
         for (int i = 0; i < c1.size(); i++) {
             if (id.equals(c1.get(i).getId())) {
                 index = i;
+                System.out.println("==========Contestant's Informations==========");
                 System.out.println(c1.get(i).toString());
+                System.out.println("==============================================");
                 break;
             }
         }
