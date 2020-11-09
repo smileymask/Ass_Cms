@@ -16,62 +16,68 @@ import Cms.*;
 //Van|ha153020|0392843701|thaovan|1234|1
 //Manh|he150883|0389621169|ducmanh|1234|1
 public class Main {
-public static boolean check(){
-    Scanner input = new Scanner(System.in);
-    String choice;
-    while(true){
-    System.out.print("Do you want to continue process ? (Y/N) : ");
-    choice = input.nextLine().toUpperCase();
-    if(choice.compareTo("Y")==0 || choice.compareTo("1")==0){
-        return true;
-    }
-    else if(choice.compareTo("N")==0 || choice.compareTo("0")==0){
-        return false;
-    }
-    else{
-        System.out.println("Please enter again !");
-    }
-    }
-    
-}
-public static boolean check2(){
-    Scanner input = new Scanner(System.in);
-    String choice;
-    while(true){
-    System.out.print("Do you want to save this contest ? (Y/N) : ");
-    choice = input.nextLine().toUpperCase();
-    if(choice.compareTo("Y")==0 || choice.compareTo("1")==0){
-        return true;
-    }
-    else if(choice.compareTo("N")==0 || choice.compareTo("0")==0){
-        return false;
-    }
-    else{
-        System.out.println("Please enter again !");
-    }
-    }
-    
-}
-    public static void main(String[] args) throws IOException {
+
+    public static String id;
+    public static ContestantMethod a = new ContestantMethod();
+    public static Contest b= new Contest();
+    public static ListProblems LP= new ListProblems();
+    public static boolean check() {
         Scanner input = new Scanner(System.in);
-        ContestantMethod a = new ContestantMethod();
-        ListProblems LP= new ListProblems();
-        LP.loadFile();
-        String id;
-       while(true){
-           
-           System.out.print(" Enter your id: ");
+        String choice;
+        while (true) {
+            System.out.print("Do you want to continue process ? (Y/N) : ");
+            choice = input.nextLine().toUpperCase();
+            if (choice.compareTo("Y") == 0 || choice.compareTo("1") == 0) {
+                return true;
+            } else if (choice.compareTo("N") == 0 || choice.compareTo("0") == 0) {
+                return false;
+            } else {
+                System.out.println("Please enter again !");
+            }
+        }
+
+    }
+
+    public static boolean check2() {
+        Scanner input = new Scanner(System.in);
+        String choice;
+        while (true) {
+            System.out.print("Do you want to save this contest ? (Y/N) : ");
+            choice = input.nextLine().toUpperCase();
+            if (choice.compareTo("Y") == 0 || choice.compareTo("1") == 0) {
+                return true;
+            } else if (choice.compareTo("N") == 0 || choice.compareTo("0") == 0) {
+                return false;
+            } else {
+                System.out.println("Please enter again !");
+            }
+        }
+
+    }
+
+    public static void login() throws IOException {
+        while (true) {
+            Scanner input = new Scanner(System.in);
+            System.out.print(" Enter your id: ");
             id = input.nextLine().toLowerCase().trim();
             System.out.print(" Enter your password: ");
             String pw = input.nextLine().trim();
-        boolean check=a.login(id,pw);
-        if(check) break;
-        else{
-            System.out.println("Please Check your ID or Password !");
+            boolean check = a.login(id, pw);
+            if (check) {
+                break;
+            } else {
+                System.out.println("Please Check your ID or Password !");
+            }
         }
-       }
-    Contest b= new Contest();
-    boolean check ; 
+    }
+
+    public static void main(String[] args) throws IOException {
+        Scanner input = new Scanner(System.in);
+
+        LP.loadFile();
+        login();
+        
+        boolean check;
         //------------------------------------------
         while (true) {
             System.out.println("1.Show information of Contestant");
@@ -84,91 +90,104 @@ public static boolean check2(){
             System.out.println("8.Save, load, and export information functions from QBs.dat file or other specific files" + "\n" + "When system start running, load default QBs.dat file into memory to use.");
             System.out.println("9.Log Out");
             System.out.println("0.Exits");
-            int choice=0;
-            while(true){
+            int choice = 0;
+            while (true) {
                 try {
-                System.out.print("Your choice: ");
-                choice = Integer.parseInt(input.nextLine());
-                break;
+                    System.out.print("Your choice: ");
+                    choice = Integer.parseInt(input.nextLine());
+                    break;
                 } catch (NumberFormatException e) {
                     System.out.println("Please enter number !");
                 }
             }
-            switch(choice){
-                case 1:{
+            switch (choice) {
+                case 1: {
                     a.showInfor(id);
                     break;
                 }
-                case 2:{
+                case 2: {
                     a.changeData(id);
                     break;
                 }
-                case 3:{
+                case 3: {
                     LP.add();
-                    while(true){
-                        check= check();
-                        if(check) LP.add();
-                        else{
+                    while (true) {
+                        check = check();
+                        if (check) {
+                            LP.add();
+                        } else {
                             break;
                         }
                     }
                     break;
                 }
-                case 4:{
+                case 4: {
                     LP.display();
-                    while(true){
-                    LP.update();
-                    LP.sort();
-                    if(!check()) break;
+                    while (true) {
+                        LP.update();
+                        LP.sort();
+                        if (!check()) {
+                            break;
+                        }
                     }
                     break;
                 }
-                case 5:{
+                case 5: {
                     LP.display();
-                   
-                    
+
                     break;
                 }
-                case 6:{
-                    while(true){
-                    b=b.GenerateContest(a.getNameInfo());
-                    b.display();
-                    if(check2()){
-                        b.addContest(b);
+                case 6: {
+                    while (true) {
+                        b = b.GenerateContest(a.getNameInfo());
+                        b.display();
+                        if (check2()) {
+                            b.addContest(b);
+                        }
+                        if (!check()) {
+                            break;
+                        }
                     }
-                    if(!check()) break;
-                    }
-                    
+
                     break;
-                }case 7:{
-                    while(true){
-                    Contest c= b.getContest(LP);
-                    if(c.getId().compareTo("")==0){
-                        System.out.println("ID not Found !");
-                        if(!check()) break;
-                    }else{
-                    c.display();
-                    if(!check()) break;
-                    }
+                }
+                case 7: {
+                    while (true) {
+                        Contest c = b.getContest(LP);
+                        if (c.getId().compareTo("") == 0) {
+                            System.out.println("ID not Found !");
+                            if (!check()) {
+                                break;
+                            }
+                        } else {
+                            c.display();
+                            if (!check()) {
+                                break;
+                            }
+                        }
                     }
                     break;
                 }
-                
-                case 8:{
+
+                case 8: {
                     LP.loadFile();
                     System.out.println("---------------------");
-                                                                                                                                                                                            System.out.println(" Load File success !");
-                                                                                                                                                                                            System.out.println("---------------------");
+                    System.out.println(" Load File success !");
+                    System.out.println("---------------------");
 
-                                                                                                                                                                                            break;
-                                                                                                                                                                                        }
-                                                                                                                                                                                        case 10:{
-                                                                                                                                                                                            break;
-                                                                                                                                                                                        }
-                                                                                                                                                                                        case 0:{
-                                                                                                                                                                                            return;
-                                                                                                                                                                                        }
-                                                                                                                                                                                    }
-                                                                                                                                                                                }
-                                                                                                                                                                            }
-                                                                                                                                                                        }
+                    break;
+                }
+                case 9:{
+                    login();
+                    break;
+                }
+                case 10: {
+                    break;
+                }
+                case 0: {
+                    return;
+                }
+            }
+        }
+    }
+}
