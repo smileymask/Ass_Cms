@@ -15,6 +15,7 @@ import Cms.*;
 //Tien|he153125|0326484853|quetien|1234|1
 //Van|ha153020|0392843701|thaovan|1234|1
 //Manh|he150883|0389621169|ducmanh|1234|1
+//Minh|he150888|0869092864|twanmynk|mynk|1234|1
 public class Main {
 
     public static String id;
@@ -44,7 +45,7 @@ public class Main {
         String choice;
         while (true) {
             System.out.print("Do you want to save this contest ? (Y/N) : ");
-            choice = input.nextLine().toUpperCase();
+            choice = input.nextLine().toUpperCase().trim();
             if (choice.compareTo("Y") == 0 || choice.compareTo("1") == 0) {
                 return true;
             } else if (choice.compareTo("N") == 0 || choice.compareTo("0") == 0) {
