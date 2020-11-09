@@ -58,10 +58,9 @@ public class Main {
 
     public static void login() throws IOException {
         Scanner input = new Scanner(System.in);
-
+        System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n"
+                + "█▄▄ █▄█ █▄█ █ █:▀█");
         while (true) {
-            System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n"
-                    + "█▄▄ █▄█ █▄█ █ █:▀█");
             System.out.print(" Enter your id: ");
             id = input.nextLine().toLowerCase().trim();
             System.out.print(" Enter your password: ");
@@ -108,6 +107,10 @@ public class Main {
             switch (choice) {
                 case 1: {
                     a.showInfor(id);
+                    check= check("Do you want to contunue process ? (Y/n)");
+                    if(!check){
+                        System.exit(0);
+                    }
                     break;
                 }
                 case 2: {
@@ -116,16 +119,15 @@ public class Main {
                 }
                 case 3: {
                     LP.add();
-                  
-                        check = check("Do you want to continue process ? (Y/N) : ");
-                        if (check) {
-                            break;
-                        } else {
-                            System.exit(0);
-                        }
+
+                    check = check("Do you want to continue process ? (Y/N) : ");
+                    if (check) {
+                        break;
+                    } else {
+                        System.exit(0);
                     }
-                    
-                
+                }
+
                 case 4: {
                     LP.display();
                     while (true) {
@@ -139,28 +141,27 @@ public class Main {
                 }
                 case 5: {
                     LP.display();
-                    
 
                     break;
                 }
                 case 6: {
-                    
-                        b = b.GenerateContest(a.getNameInfo());
-                        b.display();
-                        if (check2()) {
-                            b.addContest(b);
-                        }
-                        if (!check("Do you want to continue process ? (Y/N) : ")) {
-                            System.exit(0);
-                        
+
+                    b = b.GenerateContest(a.getNameInfo());
+                    b.display();
+                    if (check2()) {
+                        b.addContest(b);
+                    }
+                    if (!check("Do you want to continue process ? (Y/N) : ")) {
+                        System.exit(0);
+
                     }
 
                     break;
                 }
                 case 7: {
-                  while(true){
+                    while (true) {
                         Contest c = b.getContest(LP);
-                       
+
                         if (c.getId().compareTo("") == 0) {
                             System.out.println("ID not Found !");
                             if (!check("Do you want to continue  ? (Y/N) : ")) {
@@ -172,7 +173,7 @@ public class Main {
                                 System.exit(0);
                             }
                         }
-                       
+
                     }
                     break;
                 }
