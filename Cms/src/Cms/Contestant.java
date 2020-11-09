@@ -80,7 +80,7 @@ public class Contestant {
 
     @Override
     public String toString() {
-        return "Contestant's name " + name + " Contestant's ID " + id + " Contestant's Email " + email + " Contestant's mobilephone " + mobilephone + " Contestant's rank " + rank;
+        return "Contestant's name: " + name + "\n" + "Contestant's ID: " + id +"\n"  + "Contestant's Email: " + email+"\n"  + "Contestant's mobilephone: " + mobilephone + "\n" + "Contestant's rank: " + rank;
 
     }
 
