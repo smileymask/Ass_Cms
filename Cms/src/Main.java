@@ -19,13 +19,14 @@ public class Main {
 
     public static String id;
     public static ContestantMethod a = new ContestantMethod();
-    public static Contest b= new Contest();
-    public static ListProblems LP= new ListProblems();
-    public static boolean check() {
+    public static Contest b = new Contest();
+    public static ListProblems LP = new ListProblems();
+
+    public static boolean check(String mess) {
         Scanner input = new Scanner(System.in);
         String choice;
         while (true) {
-            System.out.print("Do you want to continue process ? (Y/N) : ");
+            System.out.print(mess);
             choice = input.nextLine().toUpperCase();
             if (choice.compareTo("Y") == 0 || choice.compareTo("1") == 0) {
                 return true;
@@ -56,8 +57,11 @@ public class Main {
     }
 
     public static void login() throws IOException {
+        Scanner input = new Scanner(System.in);
+
         while (true) {
-            Scanner input = new Scanner(System.in);
+            System.out.println("█░░ █▀█ █▀▀ █ █▄:█\n"
+                    + "█▄▄ █▄█ █▄█ █ █:▀█");
             System.out.print(" Enter your id: ");
             id = input.nextLine().toLowerCase().trim();
             System.out.print(" Enter your password: ");
@@ -76,10 +80,11 @@ public class Main {
 
         LP.loadFile();
         login();
-        
+
         boolean check;
         //------------------------------------------
         while (true) {
+            System.out.println("====================ContestManagementSystem=====================");
             System.out.println("1.Show information of Contestant");
             System.out.println("2.Change profile information of Contestant include change password.");
             System.out.println("3.Add a new problem to the Question Bank (QB) ");
@@ -111,22 +116,22 @@ public class Main {
                 }
                 case 3: {
                     LP.add();
-                    while (true) {
-                        check = check();
+                  
+                        check = check("Do you want to continue process ? (Y/N) : ");
                         if (check) {
-                            LP.add();
-                        } else {
                             break;
+                        } else {
+                            System.exit(0);
                         }
                     }
-                    break;
-                }
+                    
+                
                 case 4: {
                     LP.display();
                     while (true) {
                         LP.update();
                         LP.sort();
-                        if (!check()) {
+                        if (!check("Do you want to continue process ? (Y/N) : ")) {
                             break;
                         }
                     }
@@ -134,37 +139,40 @@ public class Main {
                 }
                 case 5: {
                     LP.display();
+                    
 
                     break;
                 }
                 case 6: {
-                    while (true) {
+                    
                         b = b.GenerateContest(a.getNameInfo());
                         b.display();
                         if (check2()) {
                             b.addContest(b);
                         }
-                        if (!check()) {
-                            break;
-                        }
+                        if (!check("Do you want to continue process ? (Y/N) : ")) {
+                            System.exit(0);
+                        
                     }
 
                     break;
                 }
                 case 7: {
-                    while (true) {
+                  while(true){
                         Contest c = b.getContest(LP);
+                       
                         if (c.getId().compareTo("") == 0) {
                             System.out.println("ID not Found !");
-                            if (!check()) {
+                            if (!check("Do you want to continue  ? (Y/N) : ")) {
                                 break;
                             }
                         } else {
                             c.display();
-                            if (!check()) {
-                                break;
+                            if (!check("Do you want to continue process ? (Y/N) : ")) {
+                                System.exit(0);
                             }
                         }
+                       
                     }
                     break;
                 }
@@ -177,7 +185,7 @@ public class Main {
 
                     break;
                 }
-                case 9:{
+                case 9: {
                     login();
                     break;
                 }
