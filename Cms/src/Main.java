@@ -44,7 +44,7 @@ public class Main {
         String choice;
         while (true) {
             System.out.print("Do you want to save this contest ? (Y/N) : ");
-            choice = input.nextLine().toUpperCase();
+            choice = input.nextLine().toUpperCase().trim();
             if (choice.compareTo("Y") == 0 || choice.compareTo("1") == 0) {
                 return true;
             } else if (choice.compareTo("N") == 0 || choice.compareTo("0") == 0) {
