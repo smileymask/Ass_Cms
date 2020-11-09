@@ -17,7 +17,6 @@ public class ContestantMethod {
     public ArrayList<Contestant> c1 = new ArrayList<>();
     public String s = "Test2.txt";
     public String nameInfo;
-
     public void LoadFile(String file) throws IOException {
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
@@ -150,17 +149,17 @@ public class ContestantMethod {
         LoadFile(s);
         if (c.containsKey(id)) {
             if (pw.equals(c.get(id))) {
-                for (Contestant i : c1) {
-                    if (i.getId().compareTo(id) == 0) {
+                for(Contestant i: c1){
+                    if(i.getId().compareTo(id)==0){
                         setNameInfo(i.getName());
                     }
                 }
                 return true;
             }
-        }
-        return false;
-
-    }
+            } 
+                return false;
+            
+        }  
 
     public void setNameInfo(String nameInfo) {
         this.nameInfo = nameInfo;
@@ -169,6 +168,7 @@ public class ContestantMethod {
     public String getNameInfo() {
         return nameInfo;
     }
+    
 
     public void print() {
         for (String i : c.keySet()) {
@@ -181,8 +181,7 @@ public class ContestantMethod {
             System.out.println(c1.get(i));
         }
     }
-
-    public void showInfor(String id) {
+    public void showInfor(String id){
         int index = 0;
         for (int i = 0; i < c1.size(); i++) {
             if (id.equals(c1.get(i).getId())) {
@@ -192,4 +191,58 @@ public class ContestantMethod {
             }
         }
     }
+//    public void OverallProgram() throws IOException{
+//        Scanner sc = new Scanner(System.in);
+//        LoadFile(s);
+//        while (true) {
+//            System.out.println(" 1.Login ");
+//            System.out.println(" 2.List the hashmap");
+//            System.out.println(" 3.List the ArrayList");
+//            System.out.println(" 0.Exit");
+//            System.out.print(" Your choice: ");
+//            int choice = Integer.parseInt(sc.nextLine());
+//            if (choice == 0) {
+//                break;
+//            }
+//            switch (choice) {
+//                case 1:
+//                    if (login() == true) {
+//                        System.out.println("Success");
+//                        System.out.println("Do you want to change Contestant informations Y/N ");
+//                        String ch = sc.nextLine();
+//                        if (ch.equals("Y")) {
+//                            while (true) {
+//                                System.out.println("1. Change data");
+//                                System.out.println("2. Exit");
+//                                int choice2 = Integer.parseInt(sc.nextLine());
+//                                switch (choice2) {
+//                                    case 1:
+//                                        changeData(s);
+//                                        break;
+//                                    case 2:
+//                                        return;
+//                                }
+//                            }
+//                        } else {
+//                            break;
+//                        }
+//
+//                    } else {
+//                        System.out.println("Please check your Id and Pasword ");
+//                    }
+//                    break;
+//                case 2:
+//                    print();
+//                    break;
+//                case 3:
+//                    print2();
+//                    break;
+//                case 0:
+//                    return;
+//                default:
+//                    System.out.println("Invalid choice!");
+//            }
+//        }
+//    }
+    public void ba(){}
 }
