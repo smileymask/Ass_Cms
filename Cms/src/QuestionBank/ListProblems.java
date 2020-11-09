@@ -1,6 +1,4 @@
     package QuestionBank;
-
-import com.sun.org.apache.bcel.internal.generic.AALOAD;
 import java.io.*;
 import java.util.*;
 
