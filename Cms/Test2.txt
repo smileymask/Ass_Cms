@@ -3,4 +3,4 @@ Phuc Ha|hs153019|0881730654a|phucha|1234|1
 Tien|he153125|0326484853|quetien|1234|1
 Van|ha153020|0392843701|thaovan|1234|1
 Manh|he150883|0389621169|smileymask.hn@gmail.com|1234|1
-Tuan Minh Nguyen|he150888|0869092864a|twanmynk|1234|1
+Nguyen Tuan Minh                                 |he150888|0869092864|minhnthe150888@fpt.edu.vn|1234|1
