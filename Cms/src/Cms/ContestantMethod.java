@@ -128,7 +128,7 @@ public class ContestantMethod {
                             
                         }
                         if(password.equals(c.get(id)) ){
-                            System.out.println("Success!!! ");
+                            System.out.println("Success!!!");
                             System.out.println("Enter your new password");
                             String repass = input.nextLine().trim();
                             c1.get(index).setPassword(repass);
