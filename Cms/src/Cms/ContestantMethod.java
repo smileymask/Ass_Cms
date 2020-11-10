@@ -122,14 +122,22 @@ public class ContestantMethod {
                     case 5:
                         System.out.println("Reenter your password: ");
                         String password = input.nextLine().trim();
-                        if (password.equals(c.get(id))) {
+                        while (password.equals(c.get(id)) == false) {
+                            System.out.println("Your old password is incorrect");
+                            System.out.println("Please reenter your old password: ");
+                            password = input.nextLine().trim();
+                            
+                        }
+                        if(password.equals(c.get(id)) ){
+                            System.out.println("Success!!! ");
                             System.out.println("Enter your new password");
-                            String repass = input.nextLine();
+                            String repass = input.nextLine().trim();
                             c1.get(index).setPassword(repass);
                             savefile(s);
                             LoadFile(s);
                             break;
                         }
+                        
                     case 0:
                         return;
                 }
