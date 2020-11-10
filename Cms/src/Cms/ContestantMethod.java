@@ -86,57 +86,57 @@ public class ContestantMethod {
                 System.out.println("3. Change Contestant's mobilephone: ");
                 System.out.println("4. Change Contestant's rank");
                 System.out.println("5. Change Contestant's password");
-                System.out.println("6. List the Arraylist");
-                System.out.println("7. List the Hashmap");
                 System.out.println("0. Exit");
                 System.out.print("Enter your choice: ");
                 int choice = Integer.parseInt(input.nextLine());
                 switch (choice) {
                     case 1:
                         System.out.print("Enter your name: ");
-                        String rename = input.nextLine();
+                        String rename = input.nextLine().trim();
                         c1.get(index).setName(rename);
                         System.out.println(c1.get(index).getName());
                         savefile(s);
                         break;
                     case 2:
                         System.out.print("Enter your email: ");
-                        String reemail = input.nextLine();
+                        String reemail = input.nextLine().trim();
                         c1.get(index).setEmail(reemail);
                         System.out.println(c1.get(index).getEmail());
                         savefile(s);
                         break;
                     case 3:
                         System.out.println("Enter your mobilephone: ");
-                        String remobilephone = input.nextLine();
+                        String remobilephone = input.nextLine().trim();
                         c1.get(index).setMobilephone(remobilephone);
                         System.out.println(c1.get(index).getMobilephone());
                         savefile(s);
                         break;
                     case 4:
                         System.out.println("Enter your rank: ");
-                        int rerank = Integer.parseInt(input.nextLine());
+                        int rerank = Integer.parseInt(input.nextLine().trim());
                         c1.get(index).setRank(rerank);
                         System.out.println(c1.get(index).getRank());
                         savefile(s);
                         break;
                     case 5:
                         System.out.println("Reenter your password: ");
-                        String password = input.nextLine();
-                        if (password.equals(c.get(id))) {
+                        String password = input.nextLine().trim();
+                        while (password.equals(c.get(id)) == false) {
+                            System.out.println("Your old password is incorrect");
+                            System.out.println("Please reenter your old password: ");
+                            password = input.nextLine().trim();
+                            
+                        }
+                        if(password.equals(c.get(id)) ){
+                            System.out.println("Success!!! ");
                             System.out.println("Enter your new password");
-                            String repass = input.nextLine();
+                            String repass = input.nextLine().trim();
                             c1.get(index).setPassword(repass);
                             savefile(s);
                             LoadFile(s);
                             break;
                         }
-                    case 6:
-                        print2();
-                        break;
-                    case 7:
-                        print();
-                        break;
+                        
                     case 0:
                         return;
                 }
@@ -186,7 +186,9 @@ public class ContestantMethod {
         for (int i = 0; i < c1.size(); i++) {
             if (id.equals(c1.get(i).getId())) {
                 index = i;
+                System.out.println("==========Contestant's Informations==========");
                 System.out.println(c1.get(i).toString());
+                System.out.println("==============================================");
                 break;
             }
         }
