@@ -87,8 +87,6 @@ public class ContestantMethod {
                 System.out.println("3. Change Contestant's mobilephone: ");
                 System.out.println("4. Change Contestant's rank");
                 System.out.println("5. Change Contestant's password");
-                System.out.println("6. List the Arraylist");
-                System.out.println("7. List the Hashmap");
                 System.out.println("0. Exit");
                 System.out.print("Enter your choice: ");
                 int choice = Integer.parseInt(input.nextLine());
@@ -132,12 +130,6 @@ public class ContestantMethod {
                             LoadFile(s);
                             break;
                         }
-                    case 6:
-                        print2();
-                        break;
-                    case 7:
-                        print();
-                        break;
                     case 0:
                         return;
                 }
