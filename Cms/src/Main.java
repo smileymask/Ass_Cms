@@ -98,7 +98,7 @@ public class Main {
             while (true) {
                 try {
                     System.out.print("Your choice: ");
-                    choice = Integer.parseInt(input.nextLine());
+                    choice = Integer.parseInt(input.nextLine().trim());
                     break;
                 } catch (NumberFormatException e) {
                     System.out.println("Please enter number !");

@@ -33,3 +33,4 @@
   A54 |  16-6-2020 | Greedy Problem13 | Which is optimal value in the case of job sequence problem Item : 1 2 3 4 5.. |Nguyễn Dương Đạt|https://www.geeksforgeeks.org|1.0 | Greedy algorithm
   N35 |  10-1-2020 | Greedy Problem14 | The committee wrote a ____________ report, extolling only the strengths of the proposal |Phan Huyền Nam|http://w3school.com|2.0 | Greedy algorithm
   Y58 |  11-6-2020 | Greedy Problem15 | Given the four functions f1(n) = n100 , f2(n) = (1.2)n , f3(n) = 2n/2 , f4(n) = 3n/3..... which function will have the largest value for sufficiently large values of n |Nguyễn Thu Giang|Mathematics_for_new.com|3.0 | Greedy algorithm
+MynkDeptrai |      10/11 |       mynk |  khong co  |       TMN|Tukiem di |10.0 | Dynamic programming

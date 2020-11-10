@@ -93,35 +93,35 @@ public class ContestantMethod {
                 switch (choice) {
                     case 1:
                         System.out.print("Enter your name: ");
-                        String rename = input.nextLine();
+                        String rename = input.nextLine().trim();
                         c1.get(index).setName(rename);
                         System.out.println(c1.get(index).getName());
                         savefile(s);
                         break;
                     case 2:
                         System.out.print("Enter your email: ");
-                        String reemail = input.nextLine();
+                        String reemail = input.nextLine().trim();
                         c1.get(index).setEmail(reemail);
                         System.out.println(c1.get(index).getEmail());
                         savefile(s);
                         break;
                     case 3:
                         System.out.println("Enter your mobilephone: ");
-                        String remobilephone = input.nextLine();
+                        String remobilephone = input.nextLine().trim();
                         c1.get(index).setMobilephone(remobilephone);
                         System.out.println(c1.get(index).getMobilephone());
                         savefile(s);
                         break;
                     case 4:
                         System.out.println("Enter your rank: ");
-                        int rerank = Integer.parseInt(input.nextLine());
+                        int rerank = Integer.parseInt(input.nextLine().trim());
                         c1.get(index).setRank(rerank);
                         System.out.println(c1.get(index).getRank());
                         savefile(s);
                         break;
                     case 5:
                         System.out.println("Reenter your password: ");
-                        String password = input.nextLine();
+                        String password = input.nextLine().trim();
                         if (password.equals(c.get(id))) {
                             System.out.println("Enter your new password");
                             String repass = input.nextLine();
