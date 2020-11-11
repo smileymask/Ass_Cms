@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 public class Contest{
 public String id,nameMake;
 public int totalMark;
@@ -31,9 +32,18 @@ public Contest() {
     }
 
     public Contest(String id,  String nameMake,ArrayList<Problem> QuestionList) {
-        this.id = id;
-        this.nameMake = nameMake;
+        this.id = id.trim();
+        this.nameMake = trim(nameMake);
         this.QuestionList=QuestionList;
+    }
+    public String trim(String s){
+        StringTokenizer st= new StringTokenizer(s, " ");
+        StringBuilder sb= new StringBuilder();
+       while(st.hasMoreTokens()){
+           sb.append(st.nextToken()+" ");
+       }
+       sb.deleteCharAt(sb.length()-1);
+       return sb.toString();
     }
     public String reverseDate(String date){
         String list[]=date.split("-");
@@ -132,10 +142,21 @@ public void display(){
 public void addContest(Contest a) throws  IOException{
 FileWriter fw = new FileWriter("testBank.txt", true);
  PrintWriter pw = new PrintWriter(fw);
- pw.printf("%10s | %4s | %10s | %4d |%s|%s|%s|%s|%s|%s\n",timeStamp,a.getId(),a.getDate(),a.getTotalMark(),a.getNameMake(),a.getQuestionList().get(0).getId(),a.getQuestionList().get(1).getId(),a.getQuestionList().get(2).getId(),a.getQuestionList().get(3).getId(),a.getQuestionList().get(4).getId());
+ pw.printf("%15s | %4s | %10s | %4d |%15s|%10s|%10s|%10s|%10s|%10s\n",timeStamp,a.getId(),a.getDate(),a.getTotalMark(),a.getNameMake(),a.getQuestionList().get(0).getId(),a.getQuestionList().get(1).getId(),a.getQuestionList().get(2).getId(),a.getQuestionList().get(3).getId(),a.getQuestionList().get(4).getId());
  pw.close();
 }
-
+public void displayList() throws FileNotFoundException, IOException{
+    FileReader fr= new FileReader("testBank.txt");
+    BufferedReader br= new BufferedReader(fr);
+    System.out.println("--------------------Test Bank -------------------------");
+    System.out.printf("%15s | %4s | %10s | %4s |%15s|%10s|%10s|%10s|%10s|%10s\n","Time Stamp","ID","Date","Mark","NAME","Question1","Question2","Question3","Question4","Question5");
+while(true){
+        String s= br.readLine();
+        if(s== null) break;
+        System.out.println(s);
+    }
+    
+}
 
 public Contest getContest(ListProblems a) throws FileNotFoundException, IOException{
     Scanner input= new Scanner(System.in);
@@ -146,9 +167,10 @@ public Contest getContest(ListProblems a) throws FileNotFoundException, IOExcept
     BufferedReader br= new BufferedReader(fr);
     String nextt=br.readLine();
     while(true){
+        try{
         String s= br.readLine();
         if(s==null ) break;
-        String spe[]=s.split("[|]");
+         String spe[]=s.split("[|]");
         if(spe[1].trim().compareToIgnoreCase(ID)==0){
             ArrayList<Problem> List = new ArrayList<>();
             String ID1=spe[5].trim();List.add(a.getProblem(ID1));
@@ -157,8 +179,8 @@ public Contest getContest(ListProblems a) throws FileNotFoundException, IOExcept
             String ID4=spe[8].trim();List.add(a.getProblem(ID4));
             String ID5=spe[9].trim();List.add(a.getProblem(ID5));
             newCon= new Contest(ID, spe[4], List);
-           
-        }
+        }}catch(Exception e){
+        }     
     }
     return newCon;
 }
