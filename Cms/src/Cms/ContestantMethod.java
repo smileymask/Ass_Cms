@@ -29,7 +29,8 @@ public class ContestantMethod {
         String password;
         int rank;
         while (true) {
-            s = br.readLine();
+            try {
+               s = br.readLine();
 
             if (s == null) {
                 break;
@@ -46,7 +47,10 @@ public class ContestantMethod {
             rank = Integer.parseInt(String.valueOf(s1[5]));
             c.put(id, password);
             Contestant e = new Contestant(name, id, password, email, mobilephone, rank);
-            c1.add(e);
+            c1.add(e);  
+            } catch (Exception e) {
+            }
+           
         }
         fr.close();
         br.close();
