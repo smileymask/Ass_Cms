@@ -121,7 +121,7 @@ public class ListProblems {
                     Problem r = getProblem(ID);
                     System.out.printf("%5s|%10s|%20s|%25s|%5.1f|%20s|%s\n", r.getId(), r.getDate(), r.getName(), r.getAuthor(), r.getMark(), r.getCategory(), r.getLink());
                     Contest a = new Contest();
-                    System.out.print("Short Description: ");
+                    System.out.println("Short Description: ");
                     a.displayString(r.getShortDes());
                     break;
                 }

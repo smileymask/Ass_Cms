@@ -15,7 +15,7 @@ public class ContestantMethod {
 
     public HashMap<String, String> c = new HashMap<String, String>();
     public ArrayList<Contestant> c1 = new ArrayList<>();
-    public String s = "Test2.txt";
+    public String s = "D:\\Ass_Cms\\Cms\\User data\\constestants.txt";
     public String nameInfo;
 
     public void LoadFile(String file) throws IOException {
