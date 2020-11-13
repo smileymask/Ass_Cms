@@ -13,7 +13,7 @@ public class Main {
                 max=a[i];
             }
         }
-        System.out.print(max);
+        System.out.println(max);
 
     }
 }
