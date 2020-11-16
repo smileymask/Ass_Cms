@@ -114,6 +114,7 @@ public class Contest {
     public void displayString(String s) {
         String list[] = s.split(" ");
         int cout = 0;
+        System.out.println("\t");
         for (int i = 0; i < list.length; i++) {
             System.out.print(list[i] + " ");
             cout++;
@@ -123,6 +124,7 @@ public class Contest {
                 cout = 0;
             }
         }
+        System.out.println("");
     }
 
     public void display() {
