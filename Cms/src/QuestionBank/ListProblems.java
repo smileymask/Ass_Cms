@@ -49,26 +49,30 @@ public class ListProblems {
         String Cate;
         Problem x = new Problem();
         while (true) {
-            s = br.readLine();
-            if (s == null || s.compareTo("") == 0) {
-                break;
-            }
-            a = s.split("[|]");
-            xId = a[0].trim();
-            xDate = a[1].trim();
-            xName = a[2].trim();
-            xShortDes = a[3].trim();
-            xLink = a[4].trim();
-            xAuthor = a[5].trim();
-            xMark = Double.parseDouble(a[6].trim());
-            Cate = a[7].trim();
-            for (int i = 0; i < x.CategoryList.length; i++) {
-                if (Cate.compareToIgnoreCase(x.CategoryList[i]) == 0) {
-                    xCategory = i + 1;
+
+            try {
+                s = br.readLine();
+                if (s == null || s.compareTo("") == 0) {
+                    break;
                 }
+                a = s.split("[|]");
+                xId = a[0].trim();
+                xDate = a[1].trim();
+                xName = a[2].trim();
+                xShortDes = a[3].trim();
+                xLink = a[4].trim();
+                xAuthor = a[5].trim();
+                xMark = Double.parseDouble(a[6].trim());
+                Cate = a[7].trim();
+                for (int i = 0; i < x.CategoryList.length; i++) {
+                    if (Cate.compareToIgnoreCase(x.CategoryList[i]) == 0) {
+                        xCategory = i + 1;
+                    }
+                }
+                x = new Problem(xId, xDate, xName, xShortDes, xAuthor, xLink, xMark, xCategory);
+                list.add(x);
+            } catch (Exception e) {
             }
-            x = new Problem(xId, xDate, xName, xShortDes, xAuthor, xLink, xMark, xCategory);
-            list.add(x);
         }
         fr.close();
         br.close();
@@ -136,7 +140,7 @@ public class ListProblems {
         list.clear();
         for (String x : CategoryList) {
 
-            FileReader fr = new FileReader("D:\\Ass_Cms\\Cms\\Problem type\\"+x + ".txt");
+            FileReader fr = new FileReader("D:\\Ass_Cms\\Cms\\Problem type\\" + x + ".txt");
             BufferedReader br = new BufferedReader(fr);
             String desX;
             int o = 1;
@@ -327,7 +331,7 @@ public class ListProblems {
                 list.add(x);
                 saveFile();
             } catch (Exception e) {
-                System.out.println("ERROR : "+e.toString());
+                System.out.println("ERROR : " + e.toString());
             }
 
         } else {
