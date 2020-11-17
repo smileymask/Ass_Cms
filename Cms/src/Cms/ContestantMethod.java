@@ -279,9 +279,10 @@ public class ContestantMethod {
                         if (!check("Do you want to continue ?(Y/N): ")) {
                             break;
                         }
+                        System.out.println("Old contestant's Name: "+c1.get(index).getName());
                         System.out.print("Enter new Name: ");
                         String name = input.nextLine();
-                        c1.get(index).setId(name);
+                        c1.get(index).setName(name);
                         savefile(s);
                         LoadFile(s);
                         showTable(c1.get(index));
