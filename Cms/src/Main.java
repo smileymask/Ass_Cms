@@ -196,9 +196,7 @@ public class Main {
                     login();
                     break;
                 }
-                case 9: {
-                    break;
-                }
+                
                 case 0: {
                     return;
                 }

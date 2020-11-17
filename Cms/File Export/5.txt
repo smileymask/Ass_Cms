@@ -1,0 +1,35 @@
+--------------------TEST-----------------------------
+ID: N10
+Date: 17-11-2020
+Maker name: Phan Duc Manh
+
+------------
+|Question 1| ANALYSIS PROBLEM1
+------------
+	Description: Bell polynomials, Bell polynomials of the second kind Bn,k(x1,x2,...,xn-k+1) are 
+	also called the partial Bell polynomials, where n and k are positive integers. 
+				|Mark:4.0
+------------
+|Question 1| GRAPH PROBLEM2
+------------
+	Description: Point,The point of intersection of co-ordinate axes is called ____. 
+	
+				|Mark:3.0
+------------
+|Question 1| DYNAMIC PROBLEM7
+------------
+	Description: traveling salesman,Write traveling salesman problem. 
+				|Mark:5.0
+------------
+|Question 2| FIGURE PROBLEM2
+------------
+	Description: Double or not ,Would you rather work seven days at 
+	$20 per day or be paid $2 for the first day and have your salary double every day for a full calendar week? 
+				|Mark:3.0
+------------
+|Question 1| GREEDY PROBLEM7
+------------
+	Description: Which of the following is true about Huffman Coding. 
+				|Mark:4.0
+Total: 19
+----------------------------------------------
