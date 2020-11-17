@@ -181,7 +181,7 @@ public class Main {
                         } else {
                             c.display();
                             if (check2()) {
-                                b.export();
+                                c.export();
                             }
                             if (!check("Do you want to continue process ? (Y/N) : ")) {
                                 System.exit(0);
