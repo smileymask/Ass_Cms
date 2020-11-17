@@ -256,8 +256,9 @@ public class Contest {
                     pw.println("----------------------------------------------");
                     pw.close();
                 }
+                String dir= System.getProperty("user.dir");
                 System.out.println("||Save File Succsess !||");
-                System.out.println("File has been saved at: " + "File Export" + "\\" + name + ".txt");
+                System.out.println("File has been saved at: " +dir+ "\\File Export" + "\\" + name + ".txt");
                 System.out.println("");
             } else {
                 System.out.println("File has exits !");

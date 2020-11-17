@@ -1,0 +1,36 @@
+--------------------TEST-----------------------------
+ID: R72
+Date: 17-11-2020
+Maker name: Phan Duc Manh
+
+------------
+|Question 1| ANALYSIS PROBLEM1
+------------
+	Description: Bell polynomials, Bell polynomials of the second kind Bn,k(x1,x2,...,xn-k+1) are 
+	also called the partial Bell polynomials, where n and k are positive integers. 
+				|Mark:4.0
+------------
+|Question 1| GRAPH PROBLEM2
+------------
+	Description: Point,The point of intersection of co-ordinate axes is called ____. 
+	
+				|Mark:3.0
+------------
+|Question 1| FIGURE PROBLEM4
+------------
+	Description: PopCorn,Take two sheets of 8 1/2 by 11 inch paper. 
+	Roll one into a short cylinder and the other into a tall cylinder. Does on hold more than the other? 
+				|Mark:4.0
+------------
+|Question 1| GREEDY PROBLEM11
+------------
+	Description: What is a Greedy strategy for Optimal storage on tape 
+	
+				|Mark:2.0
+------------
+|Question 1| DYNAMIC PROBLEM3
+------------
+	Description: Bell Numbers, (Number of ways to Partition a Set) 
+				|Mark:1.0
+Total: 14
+----------------------------------------------

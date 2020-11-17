@@ -1,0 +1,37 @@
+--------------------TEST-----------------------------
+ID: S09
+Date: 17-11-2020
+Maker name: Phan Duc Manh
+
+------------
+|Question 1| ANALYSIS PROBLEM3
+------------
+	Description: Functional analysis, the core of which is formed by the 
+	study of vector spaces endowed with some kind of limit-related structure, and the linear operators acting upon these spaces and respecting these structures in a suitable sense. 
+				|Mark:4.0
+------------
+|Question 1| FIGURE PROBLEM4
+------------
+	Description: PopCorn,Take two sheets of 8 1/2 by 11 inch paper. 
+	Roll one into a short cylinder and the other into a tall cylinder. Does on hold more than the other? 
+				|Mark:4.0
+------------
+|Question 1| GREEDY PROBLEM8
+------------
+	Description: The files x1,x2,x3 are 3 files of length 30,20,10 records 
+	each. What is the optimal merge pattern value? 
+				|Mark:1.0
+------------
+|Question 1| DYNAMIC PROBLEM5
+------------
+	Description: Find,Find the best and worst case analysis of quick sort 
+	
+				|Mark:1.0
+------------
+|Question 1| GRAPH PROBLEM1
+------------
+	Description: Draw,To draw the graph of a line, the least number 
+	of points required is _____. 
+				|Mark:3.0
+Total: 13
+----------------------------------------------
