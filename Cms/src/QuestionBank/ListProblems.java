@@ -439,7 +439,7 @@ public class ListProblems {
             num = randomNum(0, (graList.size() - 1));
             a.add(graList.get(num));
         }
-
+           Collections.shuffle(a);
         return a;
     }
 
