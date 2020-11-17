@@ -87,11 +87,12 @@ public class Main {
             System.out.println("1.Show information of Contestant");
             System.out.println("2.Change profile information of Contestant include change password.");
             System.out.println("3.Add a new problem to the Question Bank (QB) ");
-            System.out.println("4.Update full information for a particular problem by Problem ID");
-            System.out.println("5.A list of all available problems in the QB");
-            System.out.println("6.Generate a new Contest");
-            System.out.println("7.Export Contest by ContestID ");
-            System.out.println("8.Log Out");
+            System.out.println("4.Delete a problem by ID");
+            System.out.println("5.Update full information for a particular problem by Problem ID");
+            System.out.println("6.A list of all available problems in the QB");
+            System.out.println("7.Generate a new Contest");
+            System.out.println("8.Export Contest by ContestID ");
+            System.out.println("9.Log Out");
             System.out.println("0.Exits");
             int choice = 0;
             while (true) {
@@ -128,8 +129,17 @@ public class Main {
                         System.exit(0);
                     }
                 }
+                case 4:{
+                     LP.delete();
 
-                case 4: {
+                    check = check("Do you want to continue process ? (Y/N) : ");
+                    if (check) {
+                        break;
+                    } else {
+                        System.exit(0);
+                    }
+                }
+                case 5: {
                     LP.display();
                     while (true) {
                         LP.update();
@@ -140,7 +150,7 @@ public class Main {
                     }
                     break;
                 }
-                case 5: {
+                case 6: {
                     LP.display();
                     while (true) {
                         LP.case5();
@@ -153,7 +163,7 @@ public class Main {
                     }
                     break;
                 }
-                case 6: {
+                case 7: {
 
                     b = b.GenerateContest(a.getNameInfo());
                     b.display();
@@ -168,7 +178,7 @@ public class Main {
 
                     break;
                 }
-                case 7: {
+                case 8: {
                     b.displayList();
                     while (true) {
                         Contest c = b.getContest(LP);
@@ -192,7 +202,7 @@ public class Main {
                     break;
                 }
 
-                case 8: {
+                case 9: {
                     login();
                     break;
                 }

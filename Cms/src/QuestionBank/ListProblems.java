@@ -30,7 +30,6 @@ public class ListProblems {
 
     public void sort() throws IOException {
         sortList(list);
-        saveFile();
     }
 
     int randomNum(int min, int max) {
@@ -82,6 +81,7 @@ public class ListProblems {
         FileWriter fw = new FileWriter(fname, false);
         PrintWriter pw = new PrintWriter(fw);
         Problem x;
+        sort();
         for (int i = 0; i < list.size(); i++) {
             x = list.get(i);
             pw.printf("%5s | %10s | %10s | %10s |%10s|%10s|%.1f | %s\n", x.getId(), x.getDate(), x.getName(), x.getShortDes(), x.getAuthor(), x.getLink(), x.getMark(), x.getCategory());
@@ -188,7 +188,21 @@ public void showProblem(Problem r){
         }
         return 0;
     }
-
+    public void delete() throws IOException{
+        String xId;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter Id: ");
+        xId = input.nextLine().toUpperCase();
+        if (!checkId(xId)) {
+            int x = FindId(xId);
+            list.remove(x);
+            saveFile();
+            System.out.println(" |Delete sucssess !|");
+        }
+        else {
+            System.out.println("Id not Found !");
+        }
+    }
     public void update() throws IOException {
         String xId, xDate, xName, xShortDes, xLink, xAuthor;
         double xMark;

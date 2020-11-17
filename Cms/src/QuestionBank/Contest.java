@@ -162,7 +162,7 @@ public class Contest {
     public void displayList() throws FileNotFoundException, IOException {
         FileReader fr = new FileReader("testBank.txt");
         BufferedReader br = new BufferedReader(fr);
-        System.out.println("--------------------Test Bank -------------------------");
+        System.out.println("----------------------------------------------------------Test Bank ---------------------------------------------------------------------------------");
         System.out.printf("%15s | %4s | %10s | %4s |%15s|%10s|%10s|%10s|%10s|%10s\n", "Time Stamp", "ID", "Date", "Mark", "NAME", "Question1", "Question2", "Question3", "Question4", "Question5");
         while (true) {
             String s = br.readLine();
