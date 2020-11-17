@@ -243,11 +243,10 @@ public class ListProblems {
                         String yId = new String();
                         while (true) {
                             System.out.print("Enter new Id: ");
-                            yId = input.nextLine();
+                            yId = input.nextLine().trim();
                             if (checkId(yId) || (yId.compareToIgnoreCase(xId) == 0)) {
                                 list.get(x).setId(yId);
                                 Contest con = new Contest();
-
                                 System.out.println("-------------------");
                                 System.out.println("  Update success !");
                                 System.out.println("-------------------");
@@ -260,7 +259,7 @@ public class ListProblems {
                     }
                     case 2: {
                         System.out.print("Enter new Date: ");
-                        xDate = input.nextLine();
+                        xDate = input.nextLine().trim();
                         list.get(x).setDate(xDate);
                         System.out.println("-------------------");
                         System.out.println("  Update success !");
@@ -270,7 +269,7 @@ public class ListProblems {
                     }
                     case 3: {
                         System.out.print("Enter new Name: ");
-                        xName = input.nextLine();
+                        xName = input.nextLine().trim();
                         list.get(x).setName(xName);
                         System.out.println("-------------------");
                         System.out.println("  Update success !");
@@ -280,7 +279,7 @@ public class ListProblems {
                     }
                     case 4: {
                         System.out.print("Enter new Short Description: ");
-                        xShortDes = input.nextLine();
+                        xShortDes = input.nextLine().trim();
                         list.get(x).setShortDes(xShortDes);
                         System.out.println("-------------------");
                         System.out.println("  Update success !");
@@ -290,7 +289,7 @@ public class ListProblems {
                     }
                     case 5: {
                         System.out.print("Enter new Link: ");
-                        xLink = input.nextLine();
+                        xLink = input.nextLine().trim();
                         list.get(x).setLink(xLink);
                         System.out.println("-------------------");
                         System.out.println("  Update success !");
@@ -300,7 +299,7 @@ public class ListProblems {
                     }
                     case 6: {
                         System.out.print("Enter new Author: ");
-                        xAuthor = input.nextLine();
+                        xAuthor = input.nextLine().trim();
                         list.get(x).setAuthor(xAuthor);
                         System.out.println("-------------------");
                         System.out.println("  Update success !");
@@ -317,7 +316,7 @@ public class ListProblems {
                         System.out.println("Old id: " + list.get(x).getId());
                         if (check("Do you want to change Id ?(Y/N): ")) {
                             System.out.print("Enter new Id: ");
-                            String yId = input.nextLine();
+                            String yId = input.nextLine().trim();
                             if (checkId(yId) || (yId.compareToIgnoreCase(xId) == 0)) {
                                 list.get(x).setId(yId);
                             } else {
@@ -333,7 +332,7 @@ public class ListProblems {
                         System.out.println("Old date: " + list.get(x).getDate());
                         if (check("Do you want to change date ?(Y/N): ")) {
                             System.out.print("Enter new Date: ");
-                            xDate = input.nextLine();
+                            xDate = input.nextLine().trim();
                             list.get(x).setDate(xDate);
                             saveFile();
                             showProb(list.get(x));
@@ -344,7 +343,7 @@ public class ListProblems {
                         System.out.println("Old Problem's name: " + list.get(x).getName());
                         if (check("Do you want to change Problem's name ?(Y/N): ")) {
                             System.out.print("Enter new Problem's name : ");
-                            xName = input.nextLine();
+                            xName = input.nextLine().trim();
                             list.get(x).setName(xName);
                             saveFile();
                             showProb(list.get(x));
@@ -355,7 +354,7 @@ public class ListProblems {
                         System.out.println("Old description: " + list.get(x).getShortDes());
                         if (check("Do you want to change Short Decription ?(Y/N): ")) {
                             System.out.print("Enter new Short Decription : ");
-                            xShortDes = input.nextLine();
+                            xShortDes = input.nextLine().trim();
                             list.get(x).setShortDes(xShortDes);
                             saveFile();
                             showProb(list.get(x));
@@ -366,7 +365,7 @@ public class ListProblems {
                         System.out.println("Old Problem's Link: " + list.get(x).getLink());
                         if (check("Do you want to change Problem's Link ?(Y/N): ")) {
                             System.out.print("Enter new Link: ");
-                            xLink = input.nextLine();
+                            xLink = input.nextLine().trim();
                             list.get(x).setLink(xLink);
                             saveFile();
                             showProb(list.get(x));
@@ -377,7 +376,7 @@ public class ListProblems {
                         System.out.println("Old Problem Author: " + list.get(x).getAuthor());
                         if (check("Do you want to change Problem's Link ?(Y/N): ")) {
                             System.out.print("Enter new Author: ");
-                            xAuthor = input.nextLine();
+                            xAuthor = input.nextLine().trim();
                             list.get(x).setAuthor(xAuthor);
                             saveFile();
                             showProb(list.get(x));
@@ -392,7 +391,6 @@ public class ListProblems {
                         System.out.println("Please enter number in list !");
                         break;
                     }
-
                 }
             }
         } else {
@@ -405,7 +403,7 @@ public class ListProblems {
         System.out.printf("%5s|%10s|%20s|%25s|%5s|%20s|%s\n", "ID", "Date", "Name", "Author", "Mark", "Category", "link");
         System.out.printf("%5s|%10s|%20s|%25s|%5.1f|%20s|%s\n", r.getId(), r.getDate(), r.getName(), r.getAuthor(), r.getMark(), r.getCategory(), r.getLink());
     }
-
+    
     public Problem getProblem(String s) {
         Problem r = new Problem();
         for (Problem i : list) {

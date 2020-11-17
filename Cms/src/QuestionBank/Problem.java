@@ -107,6 +107,5 @@ public Problem() {
         return String.format("%5s|%10s|%20s|%25s|%5.1f|%20s|%s\n", getId(), getDate(), getName(), getAuthor(),getMark(),getCategory(),getLink());
     }
  
-    //ba cham
     
 }

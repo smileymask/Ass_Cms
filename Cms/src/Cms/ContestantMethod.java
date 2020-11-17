@@ -129,7 +129,7 @@ public void showTable(Contestant chane){
                     case 3:
                         while(true){
                         System.out.print("Enter new Phone number: ");
-                        String NewNum=input.nextLine();
+                        String NewNum=input.nextLine().trim();
                             try {
                                 int x= Integer.parseInt(NewNum);
                                 c1.get(index).setMobilephone(NewNum);
@@ -144,7 +144,7 @@ public void showTable(Contestant chane){
                     case 2:
                         while(true){
                         System.out.print("Enter new Email: ");
-                        String Nemail=input.nextLine();
+                        String Nemail=input.nextLine().trim();
                         if(Nemail.contains("@")){
                             c1.get(index).setEmail(Nemail);
                             showTable(c1.get(index));
@@ -185,8 +185,9 @@ public void showTable(Contestant chane){
                             break;
                         }
                     case 6:{
+                        
                         System.out.print("Enter new name: ");
-                        String name=input.nextLine();
+                        String name=input.nextLine().trim();
                         c1.get(index).setName(name);
                         showTable(c1.get(index));
                         if(!check("Do you want to continue ?(Y/N): ")){
@@ -194,7 +195,7 @@ public void showTable(Contestant chane){
                         }
                         while(true){
                         System.out.print("Enter new Email: ");
-                        String Nemail=input.nextLine();
+                        String Nemail=input.nextLine().trim();
                         if(Nemail.contains("@")){
                             c1.get(index).setEmail(Nemail);
                             showTable(c1.get(index));
