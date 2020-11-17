@@ -269,7 +269,7 @@ public class ContestantMethod {
                         System.out.println("Old Contestant's Id: " + c1.get(index).getId());
                         if (check("Do you want to change Id ?(Y/N): ")) {
                             System.out.print("Enter new ID: ");
-                            String ID = input.nextLine();
+                            String ID = input.nextLine().toLowerCase();
                             c1.get(index).setId(ID);
                             savefile(s);
                             LoadFile(s);
