@@ -15,7 +15,7 @@ public class ListProblems {
     private static String linkL[] = new String[]{"CodeSource.com", "Mathematics_for_new.com", "https://www.geeksforgeeks.org", "http://w3school.com"};
     private static final String ALPHA_NUMERIC = alphaUpperCase + digits;
 
-    public final String fname = "D:\\Ass_Cms\\Cms\\question bank\\Qbs.txt";
+    public final String fname = "question bank\\Qbs.txt";
     public ArrayList<Problem> list = new ArrayList<>();
     public final Random generator = new Random();
 
@@ -121,12 +121,8 @@ public class ListProblems {
                     System.out.println("ID not found !");
                     break;
                 } else {
-                    System.out.printf("%5s|%10s|%20s|%25s|%5s|%20s|%s\n", "ID", "Date", "Name", "Author", "Mark", "Category", "link");
                     Problem r = getProblem(ID);
-                    System.out.printf("%5s|%10s|%20s|%25s|%5.1f|%20s|%s\n", r.getId(), r.getDate(), r.getName(), r.getAuthor(), r.getMark(), r.getCategory(), r.getLink());
-                    Contest a = new Contest();
-                    System.out.println("Short Description: ");
-                    a.displayString(r.getShortDes());
+                    showProblem(r);
                     break;
                 }
             }
@@ -135,7 +131,13 @@ public class ListProblems {
             }
         }
     }
-
+public void showProblem(Problem r){
+    System.out.printf("%5s|%10s|%20s|%25s|%5s|%20s|%s\n", "ID", "Date", "Name", "Author", "Mark", "Category", "link");
+                    System.out.printf("%5s|%10s|%20s|%25s|%5.1f|%20s|%s\n", r.getId(), r.getDate(), r.getName(), r.getAuthor(), r.getMark(), r.getCategory(), r.getLink());
+                    Contest a = new Contest();
+                    System.out.println("Short Description: ");
+                    a.displayString(r.getShortDes());
+}
     public void FormatData() throws IOException {
         list.clear();
         for (String x : CategoryList) {
@@ -197,18 +199,21 @@ public class ListProblems {
         xId = input.nextLine().toUpperCase();
         if (!checkId(xId)) {
             int x = FindId(xId);
+            Problem r= getProblem(xId);
+            System.out.println("======================================================================================================================================================");
+            showProblem(r);
             while (true) {
                 System.out.println("----------------------------------------------");
                 System.out.printf("Chose data you want to change:\n");
                 System.out.printf("1.Id\n2.Date\n3.Name\n4.Short Description\n5.Link\n6.Author\n7.Mark\n");
-                System.out.printf("8.Category\n0.Exits\n");
+                System.out.printf("8.Category\n9.Change all information\n0.Exits\n");
                 while (true) {
                     try {
                         System.out.print("Your choice: ");
                         choice = Integer.parseInt(input.nextLine().trim());
                         break;
                     } catch (NumberFormatException e) {
-                        System.out.println("Please enter number !");
+                        
                     }
                 }
                 if (choice == 0) {
@@ -281,6 +286,13 @@ public class ListProblems {
                         System.out.println("-------------------");
                         System.out.println("  Update success !");
                         System.out.println("-------------------");
+                        break;
+                    }
+                    case 7:{
+                        System.out.println("Enter new Mark: ");
+                    }
+                    default:{
+                        System.out.println("Please enter number in list !");
                         break;
                     }
 
@@ -439,7 +451,7 @@ public class ListProblems {
             num = randomNum(0, (graList.size() - 1));
             a.add(graList.get(num));
         }
-           Collections.shuffle(a);
+        Collections.shuffle(a);
         return a;
     }
 

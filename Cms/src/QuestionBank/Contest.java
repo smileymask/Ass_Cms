@@ -21,7 +21,7 @@ public class Contest {
     public String date = reverseDate(java.time.LocalDate.now().toString());
     public ListProblems a = new ListProblems();
     public ArrayList<Contest> testBank = new ArrayList<>();
-    public final String f_e = "D:\\Ass_Cms\\Cms\\File Export";
+    public final String f_e = "File Export";
 
     public Contest() {
         this.id = "";
@@ -217,7 +217,7 @@ public class Contest {
         try {
             System.out.println("Enter file name: ");
             name = input.nextLine();
-            file = new File("D:\\Ass_Cms\\Cms\\File Export" + "\\" + name + ".txt");
+            file = new File("File Export" + "\\" + name + ".txt");
             isCreat = file.createNewFile();
             if (isCreat) {
                 try (FileWriter fw = new FileWriter(file)) {
@@ -257,7 +257,7 @@ public class Contest {
                     pw.close();
                 }
                 System.out.println("||Save File Succsess !||");
-                System.out.println("File has been saved at: " + "D:\\Ass_Cms\\Cms\\File Export" + "\\" + name + ".txt");
+                System.out.println("File has been saved at: " + "File Export" + "\\" + name + ".txt");
                 System.out.println("");
             } else {
                 System.out.println("File has exits !");

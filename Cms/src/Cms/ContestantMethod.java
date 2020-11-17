@@ -15,7 +15,7 @@ public class ContestantMethod {
 
     public HashMap<String, String> c = new HashMap<String, String>();
     public ArrayList<Contestant> c1 = new ArrayList<>();
-    public String s = "D:\\Ass_Cms\\Cms\\User data\\constestants.txt";
+    public String s = "User data\\constestants.txt";
     public String nameInfo;
 
     public void LoadFile(String file) throws IOException {
@@ -68,7 +68,30 @@ public class ContestantMethod {
         fw.close();
         pw.close();
     }
+public boolean check(String mess) {
+        Scanner input = new Scanner(System.in);
+        String choice;
+        while (true) {
+            System.out.print(mess);
+            choice = input.nextLine().toUpperCase().trim();
+            if (choice.compareTo("Y") == 0 || choice.compareTo("1") == 0) {
+                return true;
+            } else if (choice.compareTo("N") == 0 || choice.compareTo("0") == 0) {
+                return false;
+            } else {
+                System.out.println("Please enter again !");
+            }
+        }
 
+    }
+public void showTable(Contestant chane){
+    StringBuilder sb= new StringBuilder(chane.getPassword());
+    for(int i=2;i<sb.length()-2;i++){
+        sb.setCharAt(i, '*');
+    }
+     System.out.printf("%15s|%30s|%15s|%4s|%15s\n","Name","Email","Phone number","Rank","Password");
+                System.out.printf("%15s|%30s|%15s|%4s|%15s\n",chane.getName(),chane.getEmail(),chane.getMobilephone(),chane.getRank(),sb.toString());
+}
     public void changeData(String id) throws IOException {
         Scanner input = new Scanner(System.in);
         FileReader fr = new FileReader(s);
@@ -77,7 +100,6 @@ public class ContestantMethod {
         for (int i = 0; i < c1.size(); i++) {
             if (id.equals(c1.get(i).getId())) {
                 index = i;
-                System.out.println("Tim thay roi nhe");
                 break;
             }
         }
@@ -85,12 +107,14 @@ public class ContestantMethod {
             System.out.println("Please check your Contestant's Id");
         } else {
             while (true) {
+                showTable(c1.get(index));
                 System.out.println("Change profile of Contestant ");
                 System.out.println("1. Change Contestant's name: ");
                 System.out.println("2. Change Contestant's email: ");
                 System.out.println("3. Change Contestant's mobilephone: ");
                 System.out.println("4. Change Contestant's rank");
                 System.out.println("5. Change Contestant's password");
+                System.out.println("6. Change all ");
                 System.out.println("0. Exit");
                 System.out.print("Enter your choice: ");
                 int choice = Integer.parseInt(input.nextLine());
@@ -102,18 +126,32 @@ public class ContestantMethod {
                         System.out.println(c1.get(index).getName());
                         savefile(s);
                         break;
-                    case 2:
-                        System.out.print("Enter your email: ");
-                        String reemail = input.nextLine().trim();
-                        c1.get(index).setEmail(reemail);
-                        System.out.println(c1.get(index).getEmail());
+                    case 3:
+                        while(true){
+                        System.out.print("Enter new Phone number: ");
+                        String NewNum=input.nextLine();
+                            try {
+                                int x= Integer.parseInt(NewNum);
+                                c1.get(index).setMobilephone(NewNum);
+                                showTable(c1.get(index));
+                                break;
+                            } catch (Exception e) {
+                                System.out.println("Phone Number is not Valid, please enter again !");
+                            }
+                        }
                         savefile(s);
                         break;
-                    case 3:
-                        System.out.println("Enter your mobilephone: ");
-                        String remobilephone = input.nextLine().trim();
-                        c1.get(index).setMobilephone(remobilephone);
-                        System.out.println(c1.get(index).getMobilephone());
+                    case 2:
+                        while(true){
+                        System.out.print("Enter new Email: ");
+                        String Nemail=input.nextLine();
+                        if(Nemail.contains("@")){
+                            c1.get(index).setEmail(Nemail);
+                            showTable(c1.get(index));
+                            break;
+                        }
+                            System.out.println("Email is not valid , please enter again !");
+                        }
                         savefile(s);
                         break;
                     case 4:
@@ -134,14 +172,93 @@ public class ContestantMethod {
                         }
                         if(password.equals(c.get(id)) ){
                             System.out.println("Success!!! ");
-                            System.out.println("Enter your new password");
-                            String repass = input.nextLine().trim();
+                            System.out.println("Enter your new password: ");
+                            String repass="";
+                            while(true){
+                          repass = input.nextLine().trim();
+                            if(repass.length() <=15 ) break;
+                                System.out.println("length of pass must less than 15 ,please enter again!");
+                            }
                             c1.get(index).setPassword(repass);
                             savefile(s);
                             LoadFile(s);
                             break;
                         }
-                        
+                    case 6:{
+                        System.out.print("Enter new name: ");
+                        String name=input.nextLine();
+                        c1.get(index).setName(name);
+                        showTable(c1.get(index));
+                        if(!check("Do you want to continue ?(Y/N): ")){
+                            break;
+                        }
+                        while(true){
+                        System.out.print("Enter new Email: ");
+                        String Nemail=input.nextLine();
+                        if(Nemail.contains("@")){
+                            c1.get(index).setEmail(Nemail);
+                            showTable(c1.get(index));
+                            break;
+                        }
+                            System.out.println("Email is not valid , please enter again !");
+                        }
+                        if(!check("Do you want to continue ?(Y/N): ")){
+                            break;
+                        }
+                        while(true){
+                        System.out.print("Enter new Phone number: ");
+                        String NewNum=input.nextLine();
+                            try {
+                                int x= Integer.parseInt(NewNum);
+                                c1.get(index).setMobilephone(NewNum);
+                                showTable(c1.get(index));
+                                break;
+                            } catch (Exception e) {
+                                System.out.println("Phone Number is not Valid, please enter again !");
+                            }
+                        }
+                            if(!check("Do you want to continue ?(Y/N): ")){
+                            break;
+                        }
+                             while(true){
+                        System.out.print("Enter new Rank: ");
+                        String NewNum=input.nextLine();
+                            try {
+                                int x= Integer.parseInt(NewNum);
+                                c1.get(index).setRank(x);
+                                showTable(c1.get(index));
+                                break;
+                            } catch (Exception e) {
+                                System.out.println("Rank is not Valid, please enter again !");
+                            }
+                        }
+                            if(!check("Do you want to continue ?(Y/N): ")){
+                            break;
+                        }
+                     System.out.print("Reenter your password: ");
+                        String pass = input.nextLine().trim();
+                        while (pass.equals(c.get(id)) == false) {
+                            System.out.println("Your old password is incorrect");
+                            System.out.print("Please reenter your old password: ");
+                            pass = input.nextLine().trim();
+                            
+                        }
+                        if(pass.equals(c.get(id)) ){
+                            System.out.println("Success!!! ");
+                            System.out.print("Enter your new password: ");
+                            String repass="";
+                            while(true){
+                          repass = input.nextLine().trim();
+                            if(repass.length() <=15 ) break;
+                                System.out.println("length of pass must less than 15 ,please enter again!");
+                            }
+                            c1.get(index).setPassword(repass); 
+                             savefile(s);
+                            LoadFile(s);
+                          break;
+                       
+                    }
+                    }
                     case 0:
                         return;
                 }
