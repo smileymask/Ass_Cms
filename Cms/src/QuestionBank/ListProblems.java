@@ -434,19 +434,58 @@ public class ListProblems {
                             break;
                         }
                         System.out.println("Old Problem Author: " + list.get(x).getAuthor());
-                        if (check("Do you want to change Problem's Link ?(Y/N): ")) {
+                        if (check("Do you want to change Problem's Author name ?(Y/N): ")) {
                             System.out.print("Enter new Author: ");
                             xAuthor = input.nextLine().trim();
                             list.get(x).setAuthor(xAuthor);
                             saveFile();
                             showProblem(list.get(x));
                         }
-                        System.out.println("Update Problem's Information sucessfully");
+                        if (!check("Do you want to continue ? (Y/N): ")){
+                            break;
+                        }
+                        System.out.println("Old Problem Mark: " + list.get(x).getMark());
+                        if (check("Do you want to change Problem's Author name ?(Y/N): ")) {
+                          while (true) {
+                            try {
+                                System.out.println("Enter new Mark: ");
+                                xMark = Integer.parseInt(input.nextLine());
+                                list.get(x).setMark(xMark);
+                                System.out.println("-------------------");
+                                System.out.println("  Update success !");
+                                System.out.println("-------------------");
+                                break;
+                            } catch (Exception e) {
+                                System.out.println("Please entet number !");
+                            }
+                        }
+                          if (!check("Do you want to continue ?(Y/N): ")) {
+                            break;
+                        }
+                          System.out.println("Old Problem Categories: " + list.get(x).getCategory());
+                        if (check("Do you want to change Problem's Categories ?(Y/N): ")) {
+                        while (true) {
+                            try {
+                                System.out.println("(1.analysis,2.figure,3.Greedy algorithm,4.Dynamic programming,5.graph");
+                                System.out.print("Enter problem Category: ");
+                                xCategory = Integer.parseInt(input.nextLine());
+                                list.get(x).setCategory(xCategory);
+                                break;
+                            } catch (Exception e) {
+                                System.out.println("Please enter number in list !");
+                            }
+
+                        }
+                        
+                        }
+                         System.out.println("Update Problem's Information sucessfully");
                         if (!check("Do you want to continue ?(Y/N): ")) {
                             break;
                         }
+                        
 
                         break;
+                    }
                     }
                     default: {
                         System.out.println("Please enter number in list !");
